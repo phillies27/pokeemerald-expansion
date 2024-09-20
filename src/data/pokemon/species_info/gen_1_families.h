@@ -9176,11 +9176,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .iconSprite = gMonIcon_SlowbroGalarian,
         .iconPalIndex = 0,
         FOOTPRINT(Slowbro)
-        OVERWORLD(
+        OVERWORLD_SET_ANIM(
             sPicTable_SlowbroGalarian,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following_Asym,
             gOverworldPalette_SlowbroGalarian,
             gShinyOverworldPalette_SlowbroGalarian
         )
@@ -9515,11 +9516,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .iconSprite = gMonIcon_Farfetchd,
         .iconPalIndex = 1,
         FOOTPRINT(Farfetchd)
-        OVERWORLD(
+        OVERWORLD_SET_ANIM(
             sPicTable_Farfetchd,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_NONE,
+            sAnimTable_Following_Asym,
             gOverworldPalette_Farfetchd,
             gShinyOverworldPalette_Farfetchd
         )
