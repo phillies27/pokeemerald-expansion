@@ -25,6 +25,10 @@ from split_sprite_sheet import SheetError, convert_sheet, write_result  # noqa: 
 # folder -> (sheet name regex, function(entry, tag) -> bool picking the species)
 FOLDERS = {
     "Gigantamax": (r"(\d{4})A_(G)\.png", lambda e, tag: e["species"].endswith("_GMAX")),
+    "Regional Forms": (r"(\d{4})A_(Alola|Galar|Hisui|Paldea)\.png",
+                       # Galarian Darmanitan has separate Standard/Zen art; a plain Galar sheet is the Standard one.
+                       lambda e, tag: e["species"].endswith("_" + tag.upper())
+                       or e["species"].endswith("_" + tag.upper() + "_STANDARD")),
     # _M / _MX / _MY / _MZ  (a few sheets omit the 'A': 0678_M, 0970_M)
     "Megas": (r"(\d{4})A?_(M[XYZ]?)\.png",
               lambda e, tag: e["species"].endswith("_MEGA" + ("_" + tag[1] if len(tag) > 1 else ""))),

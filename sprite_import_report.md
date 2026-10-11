@@ -961,3 +961,25 @@ Entries here are things worth a look in the source art; none of them stop the im
 
 ### Skipped sheets
 - `0478A_M.png` (Froslass Mega): held back on purpose. 548 back_shiny pixels do not match the shiny palette derived from the front sprite; the sheet's shiny back uses greener shades than its shiny front (e.g. (144, 176, 200) where the palette would give (136, 136, 176)), so a shared shiny palette would make the shiny back look wrong.
+
+## Regional Forms
+
+- Mode: applied
+- Imported: 50, failed: 0, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 21
+
+### Failures (not imported)
+- none
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- `0026A_Alola.png` (SPECIES_RAICHU_ALOLA, `raichu/alola`)
+  - 6 stray shiny pixel(s) ignored (shiny recolour taken by majority)
+    - front shiny pixel (x=30, y=28): normal colour (184, 96, 80) should be (168, 88, 40) but sheet has (16, 16, 16)
+    - front shiny pixel (x=30, y=29): normal colour (184, 96, 80) should be (168, 88, 40) but sheet has (16, 16, 16)
+    - front shiny pixel (x=31, y=29): normal colour (184, 96, 80) should be (168, 88, 40) but sheet has (208, 128, 80)
+    - front shiny pixel (x=30, y=30): normal colour (184, 96, 80) should be (168, 88, 40) but sheet has (208, 128, 80)
+    - front shiny pixel (x=31, y=30): normal colour (224, 144, 120) should be (208, 128, 80) but sheet has (248, 176, 120)
+    - front shiny pixel (x=29, y=31): normal colour (224, 144, 120) should be (208, 128, 80) but sheet has (248, 176, 120)
+
+### Skipped sheets
+- none
