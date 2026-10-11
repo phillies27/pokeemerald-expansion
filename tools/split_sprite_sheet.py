@@ -90,7 +90,15 @@ def convert_sheet(sheet_path, order=None, bg=None):
             raise SheetError("%s has partially transparent pixels" % name)
         tiles[name] = px  # list of RGBA
 
-    bg = snap555(bg if bg else tiles[order[0]][0][:3])
+    if not bg:
+        # Most common opaque colour on the border of the front tile; the sprite can touch a corner,
+        # so a single corner pixel is not reliable.
+        ft = tiles["front"]
+        border = [ft[y * TILE + x] for y in range(TILE) for x in range(TILE)
+                  if x in (0, TILE - 1) or y in (0, TILE - 1)]
+        bg = Counter(p[:3] for p in border if p[3] != 0).most_common(1)
+        bg = bg[0][0] if bg else ft[0][:3]
+    bg = snap555(bg)
 
     # RGBA -> snapped RGB, transparent pixels become the background colour.
     changed = False
