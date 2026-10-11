@@ -15,7 +15,7 @@ GBA / Emerald limits that are checked:
     * every tile is 64x64
     * a single front/back palette of at most 16 colours (index 0 = transparent)
     * colours are 15-bit (RGB555); colours are snapped to multiples of 8 and a
-      warning is printed if that changes anything
+      note is printed if that changes anything
     * the shiny front is pixel-aligned with the normal front, so a normal->shiny
       colour mapping can be derived without ambiguity
     * back sprites only use colours that exist in the front sprites' palette
@@ -23,6 +23,10 @@ GBA / Emerald limits that are checked:
 Usage:
     python tools/split_sprite_sheet.py SHEET.png OUTDIR [--anim] [--bg R,G,B]
                                        [--order front,front_shiny,back,back_shiny]
+
+The conversion is also importable (see apply_moemon_sprites.py):
+    result = convert_sheet(path)       # raises SheetError on any problem
+    write_result(result, front_path, back_path, pal_path, shiny_path, anim=True)
 """
 
 import argparse
@@ -33,16 +37,17 @@ from collections import Counter, defaultdict
 from PIL import Image
 
 TILE = 64
+MAX_STRAY_PIXELS = 4  # per normal colour: shiny pixels that disagree with the majority recolour
+DEFAULT_ORDER = ["front", "front_shiny", "back", "back_shiny"]
+
+
+class SheetError(Exception):
+    pass
 
 
 def snap555(c):
     # GBA stores 5 bits per channel; the repo's tools expand with <<3.
     return tuple((v >> 3) << 3 for v in c)
-
-
-def die(msg):
-    print("ERROR:", msg, file=sys.stderr)
-    sys.exit(1)
 
 
 def pixels(img):
@@ -65,33 +70,27 @@ def save_indexed(path, size, idx_data, colors):
     img.save(path, bits=4, optimize=False)
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("sheet")
-    ap.add_argument("outdir")
-    ap.add_argument("--anim", action="store_true", help="also write a 64x128 anim_front.png (frame duplicated)")
-    ap.add_argument("--bg", help="background/transparent colour as R,G,B (default: top-left pixel of the sheet)")
-    ap.add_argument("--order", default="front,front_shiny,back,back_shiny",
-                    help="tile order in the sheet (default: %(default)s)")
-    args = ap.parse_args()
+def convert_sheet(sheet_path, order=None, bg=None):
+    """Validate a sheet and return its converted data. Raises SheetError."""
+    order = order or DEFAULT_ORDER
+    if sorted(order) != sorted(DEFAULT_ORDER):
+        raise SheetError("order must be a permutation of front,front_shiny,back,back_shiny")
 
-    sheet = Image.open(args.sheet).convert("RGBA")
-    order = args.order.split(",")
-    if sorted(order) != sorted(["front", "front_shiny", "back", "back_shiny"]):
-        die("--order must be a permutation of front,front_shiny,back,back_shiny")
+    sheet = Image.open(sheet_path).convert("RGBA")
     if sheet.size != (TILE * 4, TILE):
-        die("sheet must be %dx%d, got %dx%d" % (TILE * 4, TILE, *sheet.size))
+        raise SheetError("sheet must be %dx%d, got %dx%d" % (TILE * 4, TILE, *sheet.size))
 
+    warnings = []
+    details = []  # per-pixel notes for the import report
     tiles = {}
     for i, name in enumerate(order):
         t = sheet.crop((i * TILE, 0, i * TILE + TILE, TILE))
         px = pixels(t)
         if any(a not in (0, 255) for *_, a in px):
-            die("%s has partially transparent pixels; GBA graphics only support on/off transparency" % name)
+            raise SheetError("%s has partially transparent pixels" % name)
         tiles[name] = px  # list of RGBA
 
-    bg = tuple(int(x) for x in args.bg.split(",")) if args.bg else tiles[order[0]][0][:3]
-    bg = snap555(bg)
+    bg = snap555(bg if bg else tiles[order[0]][0][:3])
 
     # RGBA -> snapped RGB, transparent pixels become the background colour.
     changed = False
@@ -107,7 +106,7 @@ def main():
                 out.append(s)
         rgb[name] = out
     if changed:
-        print("note: colours were snapped to 15-bit (multiples of 8) to match what the GBA can display")
+        warnings.append("colours snapped to 15-bit")
 
     # Build normal palette from the front sprite, background first.
     fn, fs = rgb["front"], rgb["front_shiny"]
@@ -120,20 +119,35 @@ def main():
         if c not in palette:
             palette.append(c)
     if len(palette) > 16:
-        die("normal sprites use %d colours (max 16 including transparent). Reduce colours and retry." % len(palette))
+        raise SheetError("normal sprites use %d colours (max 16 incl. transparent)" % len(palette))
 
     # Derive shiny palette from the pixel-aligned front sprites.
     mapping = defaultdict(Counter)
     for a, b in zip(fn, fs):
         mapping[a][b] += 1
     shiny = {}
+    stray = 0
     for a, counts in mapping.items():
         if len(counts) > 1:
-            die("normal colour %s maps to several shiny colours %s; front and front_shiny must be pixel-aligned" % (a, dict(counts)))
-        shiny[a] = next(iter(counts))
+            # A palette can only recolour a colour one way. Tolerate a few stray pixels
+            # (typos in the shiny art) by using the majority colour.
+            ranked = counts.most_common()
+            minority = sum(n for _, n in ranked[1:])
+            if minority > MAX_STRAY_PIXELS:
+                raise SheetError("normal colour %s maps to several shiny colours %s; front/front_shiny not pixel-aligned"
+                                 % (a, dict(counts)))
+            stray += minority
+        shiny[a] = counts.most_common(1)[0][0]
+    if stray:
+        warnings.append("%d stray shiny pixel(s) ignored (shiny recolour taken by majority)" % stray)
     if shiny[bg] != bg:
-        print("warning: shiny background differs from the normal background; forcing it to match")
+        warnings.append("shiny background differed from normal background; forced to match")
         shiny[bg] = bg
+    if stray:
+        for i, (a, b) in enumerate(zip(fn, fs)):
+            if shiny[a] != b:
+                details.append("front shiny pixel (x=%d, y=%d): normal colour %s should be %s but sheet has %s"
+                               % (i % TILE, i // TILE, a, shiny[a], b))
     # Colours only the back sprite uses: look them up by comparing back vs back_shiny.
     back_map = defaultdict(Counter)
     for a, b in zip(rgb["back"], rgb["back_shiny"]):
@@ -145,38 +159,83 @@ def main():
         else:
             counts = back_map.get(c)
             if not counts or len(counts) > 1:
-                die("cannot determine the shiny colour for %s (only used on the back sprite)" % (c,))
+                raise SheetError("cannot determine the shiny colour for %s (only used on the back sprite)" % (c,))
             shiny_palette.append(next(iter(counts)))
 
     # Validate back shiny against the derived shiny palette.
     index = {c: i for i, c in enumerate(palette)}
     back_idx = [index[c] for c in rgb["back"]]
-    shiny_index = {c: i for i, c in enumerate(shiny_palette)}
-    if len(shiny_index) != len(shiny_palette):
-        print("warning: two palette entries share one shiny colour (allowed, but check it is intended)")
-    mismatch = 0
-    for i, c in zip(back_idx, rgb["back_shiny"]):
-        if shiny_palette[i] != c:
-            mismatch += 1
+    mismatch = sum(1 for i, c in zip(back_idx, rgb["back_shiny"]) if shiny_palette[i] != c)
     if mismatch:
-        print("warning: %d back_shiny pixels do not match the shiny palette derived from the front sprite" % mismatch)
+        warnings.append("%d back_shiny pixels do not match the shiny palette derived from the front sprite" % mismatch)
+        for i, (k, c) in enumerate(zip(back_idx, rgb["back_shiny"])):
+            if shiny_palette[k] != c:
+                details.append("back shiny pixel (x=%d, y=%d): palette gives %s but sheet has %s"
+                               % (i % TILE, i // TILE, shiny_palette[k], c))
+
+    used = len({index[c] for c in fn} | set(back_idx))
 
     # Pad palette to 16 entries so the file is always a full 16-colour palette.
     while len(palette) < 16:
         palette.append((0, 0, 0))
         shiny_palette.append((0, 0, 0))
 
-    os.makedirs(args.outdir, exist_ok=True)
-    front_idx = [index[c] for c in fn]
-    save_indexed(os.path.join(args.outdir, "front.png"), (TILE, TILE), front_idx, palette)
-    save_indexed(os.path.join(args.outdir, "back.png"), (TILE, TILE), back_idx, palette)
-    if args.anim:
-        save_indexed(os.path.join(args.outdir, "anim_front.png"), (TILE, TILE * 2), front_idx + front_idx, palette)
-    write_pal(os.path.join(args.outdir, "normal.pal"), palette)
-    write_pal(os.path.join(args.outdir, "shiny.pal"), shiny_palette)
+    return {
+        "bg": bg,
+        "palette": palette,
+        "shiny_palette": shiny_palette,
+        "front_idx": [index[c] for c in fn],
+        "back_idx": back_idx,
+        "colours_used": used,
+        "warnings": warnings,
+        "details": details,
+    }
 
-    used = len({*front_idx, *back_idx})
-    print("wrote files to %s (%d colours incl. transparent, background index 0 = %s)" % (args.outdir, used, bg))
+
+def write_result(result, front_path, back_path, pal_path, shiny_path, anim=False):
+    """Write front/back/palettes to explicit paths.
+
+    With anim=True the front file is 64x128 holding the same frame twice (no sprite animation).
+    """
+    for p in (front_path, back_path, pal_path, shiny_path):
+        os.makedirs(os.path.dirname(os.path.abspath(p)), exist_ok=True)
+    pal = result["palette"]
+    front = result["front_idx"]
+    if anim:
+        save_indexed(front_path, (TILE, TILE * 2), front + front, pal)
+    else:
+        save_indexed(front_path, (TILE, TILE), front, pal)
+    save_indexed(back_path, (TILE, TILE), result["back_idx"], pal)
+    write_pal(pal_path, pal)
+    write_pal(shiny_path, result["shiny_palette"])
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("sheet")
+    ap.add_argument("outdir")
+    ap.add_argument("--anim", action="store_true", help="also write a 64x128 anim_front.png (frame duplicated)")
+    ap.add_argument("--bg", help="background/transparent colour as R,G,B (default: top-left pixel of the sheet)")
+    ap.add_argument("--order", default=",".join(DEFAULT_ORDER),
+                    help="tile order in the sheet (default: %(default)s)")
+    args = ap.parse_args()
+
+    bg = tuple(int(x) for x in args.bg.split(",")) if args.bg else None
+    try:
+        result = convert_sheet(args.sheet, args.order.split(","), bg)
+    except SheetError as e:
+        print("ERROR:", e, file=sys.stderr)
+        sys.exit(1)
+    for w in result["warnings"]:
+        print("note:", w)
+
+    out = args.outdir
+    paths = (os.path.join(out, "back.png"), os.path.join(out, "normal.pal"), os.path.join(out, "shiny.pal"))
+    write_result(result, os.path.join(out, "front.png"), *paths, anim=False)
+    if args.anim:
+        write_result(result, os.path.join(out, "anim_front.png"), *paths, anim=True)
+    print("wrote files to %s (%d colours incl. transparent, background index 0 = %s)"
+          % (args.outdir, result["colours_used"], result["bg"]))
 
 
 if __name__ == "__main__":
