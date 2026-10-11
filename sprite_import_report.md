@@ -319,3 +319,21 @@ Entries here are things worth a look in the source art; none of them stop the im
 
 ### Skipped sheets
 - none
+
+## 6. Generation VI
+
+- Mode: applied
+- Imported: 66, failed: 0, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 16
+
+### Failures (not imported)
+- none
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- `0671A.png` (SPECIES_FLORGES_RED, `florges`)
+  - 2 back_shiny pixels do not match the shiny palette derived from the front sprite
+    - back shiny pixel (x=23, y=49): palette gives (176, 200, 208) but sheet has (168, 112, 144)
+    - back shiny pixel (x=55, y=53): palette gives (16, 16, 16) but sheet has (88, 32, 24)
+
+### Skipped sheets
+- none
