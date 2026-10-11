@@ -76,3 +76,23 @@ Entries here are things worth a look in the source art; none of them stop the im
 
 ### Skipped sheets
 - none
+
+## 3. Generation III
+
+- Mode: applied
+- Imported: 134, failed: 1, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 47
+
+### Failures (not imported)
+- `0292A.png`: normal colour (144, 176, 176) maps to several shiny colours {(144, 176, 176): 1619, (128, 104, 128): 10, (96, 56, 48): 27, (184, 160, 184): 10, (16, 16, 16): 46}; front/front_shiny not pixel-aligned
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- `0354A.png` (SPECIES_BANETTE, `banette`)
+  - 1 back_shiny pixels do not match the shiny palette derived from the front sprite
+    - back shiny pixel (x=38, y=37): palette gives (192, 104, 88) but sheet has (240, 168, 136)
+- `0361A.png` (SPECIES_SNORUNT, `snorunt`)
+  - 1 back_shiny pixels do not match the shiny palette derived from the front sprite
+    - back shiny pixel (x=44, y=39): palette gives (168, 80, 48) but sheet has (184, 128, 160)
+
+### Skipped sheets
+- none
