@@ -928,3 +928,36 @@ Entries here are things worth a look in the source art; none of them stop the im
 
 ### Skipped sheets
 - none
+
+## Gigantamax
+
+- Mode: applied
+- Imported: 4, failed: 0, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 1
+
+### Failures (not imported)
+- none
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- none
+
+### Skipped sheets
+- none
+
+## Megas
+
+- Mode: applied
+- Imported: 50, failed: 2, skipped: 1
+- Sheets whose colours were snapped to GBA 15-bit (informational): 29
+
+### Failures (not imported)
+- `0308A_M.png`: normal colour (152, 152, 168) maps to several shiny colours {(192, 160, 136): 346, (192, 160, 144): 17}; front/front_shiny not pixel-aligned
+- `0445A_M.png`: normal sprites use 18 colours (max 16 incl. transparent)
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- `0150A_MX.png` (SPECIES_MEWTWO_MEGA_X, `mewtwo/mega_x`)
+  - 1 stray shiny pixel(s) ignored (shiny recolour taken by majority)
+    - front shiny pixel (x=30, y=40): normal colour (184, 184, 208) should be (144, 176, 152) but sheet has (96, 128, 104)
+
+### Skipped sheets
+- `0478A_M.png` (Froslass Mega): held back on purpose. 548 back_shiny pixels do not match the shiny palette derived from the front sprite; the sheet's shiny back uses greener shades than its shiny front (e.g. (144, 176, 200) where the palette would give (136, 136, 176)), so a shared shiny palette would make the shiny back look wrong.
