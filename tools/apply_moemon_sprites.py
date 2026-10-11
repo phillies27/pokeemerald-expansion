@@ -163,6 +163,8 @@ def iter_entries(dex_numbers):
                 "name": name.group(1) if name else m.group(1)[8:].title(),
                 "front": sym("frontPic"), "back": sym("backPic"),
                 "pal": sym("palette"), "shiny": sym("shinyPalette"),
+                "front_f": sym("frontPicFemale"), "back_f": sym("backPicFemale"),
+                "pal_f": sym("paletteFemale"), "shiny_f": sym("shinyPaletteFemale"),
             }
 
 
