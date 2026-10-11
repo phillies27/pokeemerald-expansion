@@ -43,3 +43,36 @@ Entries here are things worth a look in the source art; none of them stop the im
 
 ### Skipped sheets
 - none
+
+## 2. Generation II
+
+- Mode: applied
+- Imported: 100, failed: 0, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 32
+
+### Failures (not imported)
+- none
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- `0195A.png` (SPECIES_QUAGSIRE, `quagsire`)
+  - 17 back_shiny pixels do not match the shiny palette derived from the front sprite
+    - back shiny pixel (x=37, y=36): palette gives (248, 160, 176) but sheet has (248, 160, 168)
+    - back shiny pixel (x=38, y=36): palette gives (248, 160, 176) but sheet has (248, 160, 168)
+    - back shiny pixel (x=37, y=37): palette gives (248, 160, 176) but sheet has (248, 160, 168)
+    - back shiny pixel (x=38, y=37): palette gives (248, 160, 176) but sheet has (248, 160, 168)
+    - back shiny pixel (x=39, y=37): palette gives (248, 160, 176) but sheet has (248, 160, 168)
+    - back shiny pixel (x=37, y=38): palette gives (248, 160, 176) but sheet has (248, 160, 168)
+    - back shiny pixel (x=38, y=38): palette gives (248, 160, 176) but sheet has (248, 160, 168)
+    - back shiny pixel (x=39, y=38): palette gives (248, 160, 176) but sheet has (248, 160, 168)
+    - back shiny pixel (x=28, y=41): palette gives (120, 72, 64) but sheet has (120, 64, 56)
+    - back shiny pixel (x=27, y=42): palette gives (120, 72, 64) but sheet has (120, 64, 56)
+    - back shiny pixel (x=29, y=42): palette gives (120, 72, 64) but sheet has (120, 64, 56)
+    - back shiny pixel (x=25, y=43): palette gives (120, 72, 64) but sheet has (120, 64, 56)
+    - back shiny pixel (x=30, y=43): palette gives (120, 72, 64) but sheet has (120, 64, 56)
+    - back shiny pixel (x=20, y=55): palette gives (120, 72, 64) but sheet has (120, 64, 56)
+    - back shiny pixel (x=21, y=57): palette gives (120, 72, 64) but sheet has (120, 64, 56)
+    - back shiny pixel (x=22, y=59): palette gives (120, 72, 64) but sheet has (120, 64, 56)
+    - back shiny pixel (x=21, y=60): palette gives (120, 72, 64) but sheet has (120, 64, 56)
+
+### Skipped sheets
+- none
