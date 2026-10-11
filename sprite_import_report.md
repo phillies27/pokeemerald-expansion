@@ -337,3 +337,76 @@ Entries here are things worth a look in the source art; none of them stop the im
 
 ### Skipped sheets
 - none
+
+## 7. Generation VII
+
+- Mode: applied
+- Imported: 68, failed: 3, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 18
+
+### Failures (not imported)
+- `0758A.png`: normal sprites use 17 colours (max 16 incl. transparent)
+- `0766A.png`: normal colour (64, 64, 64) maps to several shiny colours {(80, 64, 48): 205, (16, 16, 120): 76}; front/front_shiny not pixel-aligned
+- `0800A.png`: normal sprites use 17 colours (max 16 incl. transparent)
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- `0729A.png` (SPECIES_BRIONNE, `brionne`)
+  - 42 back_shiny pixels do not match the shiny palette derived from the front sprite
+    - back shiny pixel (x=21, y=38): palette gives (16, 16, 16) but sheet has (184, 104, 120)
+    - back shiny pixel (x=22, y=38): palette gives (56, 56, 136) but sheet has (16, 16, 16)
+    - back shiny pixel (x=20, y=39): palette gives (240, 176, 176) but sheet has (184, 104, 120)
+    - back shiny pixel (x=21, y=39): palette gives (184, 104, 120) but sheet has (240, 176, 176)
+    - back shiny pixel (x=22, y=39): palette gives (16, 16, 16) but sheet has (184, 104, 120)
+    - back shiny pixel (x=23, y=39): palette gives (56, 56, 136) but sheet has (16, 16, 16)
+    - back shiny pixel (x=25, y=39): palette gives (128, 128, 208) but sheet has (96, 96, 176)
+    - back shiny pixel (x=18, y=40): palette gives (240, 176, 176) but sheet has (184, 104, 120)
+    - back shiny pixel (x=22, y=40): palette gives (240, 176, 176) but sheet has (248, 216, 224)
+    - back shiny pixel (x=23, y=40): palette gives (16, 16, 16) but sheet has (240, 176, 176)
+    - back shiny pixel (x=25, y=40): palette gives (96, 96, 176) but sheet has (56, 56, 136)
+    - back shiny pixel (x=26, y=40): palette gives (128, 128, 208) but sheet has (96, 96, 176)
+    - back shiny pixel (x=27, y=40): palette gives (128, 128, 208) but sheet has (96, 96, 176)
+    - back shiny pixel (x=23, y=41): palette gives (240, 176, 176) but sheet has (248, 216, 224)
+    - back shiny pixel (x=24, y=41): palette gives (16, 16, 16) but sheet has (240, 176, 176)
+    - back shiny pixel (x=25, y=41): palette gives (56, 56, 136) but sheet has (16, 16, 16)
+    - back shiny pixel (x=26, y=41): palette gives (96, 96, 176) but sheet has (56, 56, 136)
+    - back shiny pixel (x=24, y=42): palette gives (184, 104, 120) but sheet has (248, 216, 224)
+    - back shiny pixel (x=25, y=42): palette gives (16, 16, 16) but sheet has (240, 176, 176)
+    - back shiny pixel (x=26, y=42): palette gives (56, 56, 136) but sheet has (16, 16, 16)
+    - back shiny pixel (x=27, y=42): palette gives (96, 96, 176) but sheet has (56, 56, 136)
+    - back shiny pixel (x=25, y=43): palette gives (240, 176, 176) but sheet has (248, 216, 224)
+    - back shiny pixel (x=26, y=43): palette gives (16, 16, 16) but sheet has (240, 176, 176)
+    - back shiny pixel (x=27, y=43): palette gives (56, 56, 136) but sheet has (184, 104, 120)
+    - back shiny pixel (x=28, y=43): palette gives (96, 96, 176) but sheet has (16, 16, 16)
+    - back shiny pixel (x=29, y=43): palette gives (96, 96, 176) but sheet has (56, 56, 136)
+    - back shiny pixel (x=26, y=44): palette gives (240, 176, 176) but sheet has (248, 216, 224)
+    - back shiny pixel (x=27, y=44): palette gives (184, 104, 120) but sheet has (248, 216, 224)
+    - back shiny pixel (x=28, y=44): palette gives (16, 16, 16) but sheet has (240, 176, 176)
+    - back shiny pixel (x=29, y=44): palette gives (56, 56, 136) but sheet has (184, 104, 120)
+    - back shiny pixel (x=30, y=44): palette gives (96, 96, 176) but sheet has (16, 16, 16)
+    - back shiny pixel (x=31, y=44): palette gives (96, 96, 176) but sheet has (56, 56, 136)
+    - back shiny pixel (x=28, y=45): palette gives (240, 176, 176) but sheet has (248, 216, 224)
+    - back shiny pixel (x=29, y=45): palette gives (16, 16, 16) but sheet has (248, 216, 224)
+    - back shiny pixel (x=30, y=45): palette gives (56, 56, 136) but sheet has (184, 104, 120)
+    - back shiny pixel (x=31, y=45): palette gives (96, 96, 176) but sheet has (16, 16, 16)
+    - back shiny pixel (x=33, y=45): palette gives (16, 16, 16) but sheet has (56, 56, 136)
+    - back shiny pixel (x=29, y=46): palette gives (240, 176, 176) but sheet has (248, 216, 224)
+    - back shiny pixel (x=30, y=46): palette gives (184, 104, 120) but sheet has (248, 216, 224)
+    - back shiny pixel (x=31, y=46): palette gives (16, 16, 16) but sheet has (240, 176, 176)
+    - back shiny pixel (x=32, y=46): palette gives (16, 16, 16) but sheet has (208, 72, 112)
+    - back shiny pixel (x=30, y=47): palette gives (240, 176, 176) but sheet has (248, 216, 224)
+- `0748A.png` (SPECIES_TOXAPEX, `toxapex`)
+  - 1 stray shiny pixel(s) ignored (shiny recolour taken by majority)
+    - front shiny pixel (x=34, y=18): normal colour (128, 184, 208) should be (184, 32, 80) but sheet has (128, 16, 56)
+- `0779A.png` (SPECIES_BRUXISH, `bruxish`)
+  - 1 stray shiny pixel(s) ignored (shiny recolour taken by majority)
+    - front shiny pixel (x=48, y=32): normal colour (184, 176, 32) should be (200, 184, 80) but sheet has (240, 224, 128)
+- `0783A.png` (SPECIES_HAKAMO_O, `hakamo_o`)
+  - 2 stray shiny pixel(s) ignored (shiny recolour taken by majority)
+    - front shiny pixel (x=8, y=15): normal colour (96, 96, 96) should be (104, 112, 56) but sheet has (144, 176, 176)
+    - front shiny pixel (x=20, y=63): normal colour (144, 176, 176) should be (144, 176, 176) but sheet has (0, 0, 0)
+- `0789A.png` (SPECIES_COSMOG, `cosmog`)
+  - 1 back_shiny pixels do not match the shiny palette derived from the front sprite
+    - back shiny pixel (x=33, y=28): palette gives (80, 32, 120) but sheet has (64, 16, 48)
+
+### Skipped sheets
+- none
