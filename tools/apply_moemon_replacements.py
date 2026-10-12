@@ -29,6 +29,7 @@ def main():
     ap.add_argument("--gen", type=int, required=True, choices=sorted(base.GEN_FOLDERS))
     ap.add_argument("--source", default=DEFAULT_SOURCE, help="'Replacements' folder (default: %(default)s)")
     ap.add_argument("--only", help="comma separated dex numbers to process")
+    ap.add_argument("--exclude", help="comma separated dex numbers to skip (logged as skipped)")
     ap.add_argument("--apply", action="store_true", help="write files (default is a dry run)")
     ap.add_argument("--report", default=os.path.join(ROOT, "sprite_import_report.md"))
     args = ap.parse_args()
@@ -37,6 +38,7 @@ def main():
     if not os.path.isdir(folder):
         sys.exit("source folder not found: %s" % folder)
     only = {int(x) for x in args.only.split(",")} if args.only else None
+    exclude = {int(x) for x in args.exclude.split(",")} if args.exclude else set()
 
     dex_numbers = base.load_dex_numbers()
     syms = base.load_graphics_symbols()
@@ -51,6 +53,9 @@ def main():
             continue
         dex = int(m.group(1))
         if only and dex not in only:
+            continue
+        if dex in exclude:
+            skipped.append((name, "excluded (held back, see notes in report)"))
             continue
         if dex in seen:
             failed.append((name, "dex %d already has a replacement (%s); not applied" % (dex, seen[dex])))

@@ -1501,3 +1501,18 @@ Entries here are things worth a look in the source art; none of them stop the im
 
 ### Skipped sheets
 - none
+
+## Replacements: Gen 3
+
+- Mode: applied
+- Imported: 20, failed: 1, skipped: 1
+- Sheets whose colours were snapped to GBA 15-bit (informational): 14
+
+### Failures (not imported)
+- `0376D.png`: normal colour (248, 248, 248) maps to several shiny colours {(248, 248, 248): 26, (248, 200, 96): 74}; front/front_shiny not pixel-aligned
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- none
+
+### Skipped sheets
+- `0330B.png`: held back (Flygon): 333 back_shiny pixels do not match the shiny palette derived from the front sprite (back shiny art is shaded differently). Vanilla/main-sheet Flygon kept.
