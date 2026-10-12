@@ -1695,3 +1695,19 @@ Entries here are things worth a look in the source art; none of them stop the im
 
 ### Skipped sheets
 - `0547B.png`: skipped by --skip-sheet (another replacement for dex 547 was chosen)
+
+## Replacements: Gen 6
+
+- Mode: applied
+- Imported: 40, failed: 2, skipped: 1
+- Sheets whose colours were snapped to GBA 15-bit (informational): 24
+
+### Failures (not imported)
+- `0691C.png`: normal sprites use 17 colours (max 16 incl. transparent)
+- `Vivillon_0666B/0666B-PokeBal.png`: normal colour (240, 176, 176) maps to several shiny colours {(232, 168, 128): 144, (240, 176, 176): 36}; front/front_shiny not pixel-aligned
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- none
+
+### Skipped sheets
+- `Vivillon_0666B/0666B.png`: identical copy of 0666B.png (already applied)
