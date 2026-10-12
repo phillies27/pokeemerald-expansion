@@ -1822,3 +1822,18 @@ Entries here are things worth a look in the source art; none of them stop the im
 
 ### Skipped sheets
 - none
+
+## Replacements: Regional Forms
+
+- Mode: applied
+- Imported: 6, failed: 0, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 6
+
+### Failures (not imported)
+- none
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- none
+
+### Skipped sheets
+- none
