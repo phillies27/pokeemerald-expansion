@@ -1729,3 +1729,66 @@ Entries here are things worth a look in the source art; none of them stop the im
 
 ### Skipped sheets
 - `0780C.png`: held back (Drampa): 613 back_shiny pixels do not match the shiny palette derived from the front sprite (back shiny art is shaded differently). Existing Drampa kept.
+
+## Replacements: Gen 8
+
+- Mode: applied
+- Imported: 16, failed: 0, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 9
+
+### Failures (not imported)
+- none
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- `0834B.png` (SPECIES_DREDNAW, `drednaw`)
+  - 40 back_shiny pixels do not match the shiny palette derived from the front sprite
+    - back shiny pixel (x=14, y=0): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=15, y=0): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=16, y=0): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=17, y=0): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=18, y=0): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=19, y=0): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=20, y=1): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=21, y=1): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=22, y=1): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=23, y=1): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=31, y=12): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=32, y=12): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=21, y=13): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=21, y=14): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=20, y=15): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=20, y=16): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=20, y=17): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=40, y=35): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=41, y=35): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=21, y=38): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=22, y=38): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=18, y=39): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=19, y=39): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=15, y=40): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=47, y=57): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=53, y=57): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=54, y=57): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=43, y=59): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=31, y=60): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=40, y=60): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=41, y=60): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=37, y=61): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=38, y=61): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=28, y=63): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=29, y=63): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=30, y=63): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=31, y=63): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=32, y=63): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=33, y=63): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+    - back shiny pixel (x=34, y=63): palette gives (152, 48, 0) but sheet has (120, 48, 24)
+- `0857B.png` (SPECIES_HATTREM, `hattrem`)
+  - 5 back_shiny pixels do not match the shiny palette derived from the front sprite
+    - back shiny pixel (x=13, y=9): palette gives (168, 80, 96) but sheet has (128, 48, 64)
+    - back shiny pixel (x=14, y=13): palette gives (168, 80, 96) but sheet has (128, 48, 64)
+    - back shiny pixel (x=15, y=16): palette gives (168, 80, 96) but sheet has (128, 48, 64)
+    - back shiny pixel (x=18, y=17): palette gives (168, 80, 96) but sheet has (128, 48, 64)
+    - back shiny pixel (x=16, y=18): palette gives (168, 80, 96) but sheet has (128, 48, 64)
+
+### Skipped sheets
+- none

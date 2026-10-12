@@ -33,6 +33,15 @@ OVERRIDES = {
     "0666B.png": "SPECIES_VIVILLON_MEADOW",
 }
 
+# Replacement sheets of the plain "NNNNA" (female) art of the gendered pairs that have a separate
+# "_Male" sheet in the database (checked visually against NNNNA / NNNNA_Male):
+#   sheet -> (species, role); role "female" = that species' frontPicFemale/... graphics,
+#   role "main" = the species entry itself (a separate female species).
+FEMALE_OVERRIDES = {
+    "0593B.png": ("SPECIES_JELLICENT", "female"),
+    "0902B.png": ("SPECIES_BASCULEGION_F", "main"),
+}
+
 # (generation, subfolder) -> {file stem: species}; sheets are named "<prefix>-<Pattern>.png"
 _VIV = {"Archipelago": "ARCHIPELAGO", "Continental": "CONTINENTAL", "Elegant": "ELEGANT",
         "Fancy": "FANCY", "Garden": "GARDEN", "HighPlains": "HIGH_PLAINS", "IcySnow": "ICY_SNOW",
@@ -139,7 +148,13 @@ def main():
             failed.append((name, "dex %d already has a replacement (%s); not applied" % (dex, seen[dex])))
             continue
         seen[dex] = name
-        if name in OVERRIDES:
+        if name in FEMALE_OVERRIDES:
+            target, role = FEMALE_OVERRIDES[name]
+            sp = by_species.get(target)
+            if sp and role == "female":
+                sp = dict(sp, front=sp["front_f"], back=sp["back_f"], pal=sp["pal_f"],
+                          shiny=sp["shiny_f"], species=sp["species"] + " (female graphics)")
+        elif name in OVERRIDES:
             sp = by_species.get(OVERRIDES[name])
         else:
             sp = species.get(dex)
@@ -162,7 +177,7 @@ def main():
     base.write_report(args.report, "Replacements: Gen %d" % args.gen, args.apply, ok, failed, skipped)
     print("report updated: %s" % args.report)
     if args.apply:
-        base.record_state(ok)
+        base.record_state([x for x in ok if "(female graphics)" not in x[1]])
         import sprite_checklist
         sprite_checklist.generate()
         print("checklist updated: sprite_checklist.md")
