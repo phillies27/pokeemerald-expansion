@@ -43,6 +43,20 @@ FEMALE_OVERRIDES = {
     "0902B.png": ("SPECIES_BASCULEGION_F", "main"),
 }
 
+# "Other Canon Forms" replacement sheets are named NNNN<letter><_|-><Tag>.png; (dex, tag) -> species.
+# Every one of these species has its own graphics folder (nothing shared with another form).
+CANON_MAP = {
+    (383, "Primal"): "SPECIES_GROUDON_PRIMAL",
+    (479, "Fan"): "SPECIES_ROTOM_FAN", (479, "Frost"): "SPECIES_ROTOM_FROST",
+    (479, "Heat"): "SPECIES_ROTOM_HEAT", (479, "Wash"): "SPECIES_ROTOM_WASH",
+    (479, "Mow"): "SPECIES_ROTOM_MOW",
+    (648, "Pirouette"): "SPECIES_MELOETTA_PIROUETTE",
+    (681, "Blade"): "SPECIES_AEGISLASH_BLADE",
+    # "<dex>B_Male" is the male art (the plain sheet of such pairs is the female one)
+    (902, "Male"): "SPECIES_BASCULEGION_M",
+}
+CANON_FOLDER = "Other Canon Forms"
+
 # (generation, subfolder) -> {file stem: species}; sheets are named "<prefix>-<Pattern>.png"
 _VIV = {"Archipelago": "ARCHIPELAGO", "Continental": "CONTINENTAL", "Elegant": "ELEGANT",
         "Fancy": "FANCY", "Garden": "GARDEN", "HighPlains": "HIGH_PLAINS", "IcySnow": "ICY_SNOW",
@@ -57,7 +71,7 @@ SUBFOLDERS = {
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--gen", type=int, choices=sorted(base.GEN_FOLDERS))
-    ap.add_argument("--folder", choices=sorted(forms.FOLDERS),
+    ap.add_argument("--folder", choices=sorted(forms.FOLDERS) + [CANON_FOLDER],
                     help="form folder (Megas, Gigantamax, Regional Forms) instead of --gen")
     ap.add_argument("--source", default=DEFAULT_SOURCE, help="'Replacements' folder (default: %(default)s)")
     ap.add_argument("--only", help="comma separated dex numbers to process")
@@ -113,7 +127,26 @@ def main():
                          os.path.join(ROOT, paths["pal"]), os.path.join(ROOT, paths["shiny"]),
                          anim=is_anim)
 
-    if args.folder:
+    if args.folder == CANON_FOLDER:
+        for name in sorted(os.listdir(folder)):
+            m = re.fullmatch(r"(\d{4})[A-Z][_-](\w+)\.png", name)
+            if not m:
+                skipped.append((name, "does not match NNNNX_Tag.png"))
+                continue
+            dex, tag = int(m.group(1)), m.group(2)
+            if name in skip_sheets:
+                skipped.append((name, "skipped by --skip-sheet"))
+            elif only and dex not in only:
+                continue
+            elif dex in exclude:
+                skipped.append((name, "excluded (held back, see notes in report)"))
+            elif (dex, tag) not in CANON_MAP:
+                skipped.append((name, "not mapped to a species yet"))
+            elif CANON_MAP[(dex, tag)] not in by_species:
+                failed.append((name, "species not found: %s" % CANON_MAP[(dex, tag)]))
+            else:
+                run(name, os.path.join(folder, name), by_species[CANON_MAP[(dex, tag)]])
+    elif args.folder:
         # Form folders: NNNN<letter>_<tag>.png picks the form species like apply_moemon_forms.py does.
         pattern, picker = forms.FOLDERS[args.folder]
         pattern = pattern.replace("A?_", "[A-Z]?_").replace("A_", "[A-Z]_")
