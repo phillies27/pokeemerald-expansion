@@ -1792,3 +1792,18 @@ Entries here are things worth a look in the source art; none of them stop the im
 
 ### Skipped sheets
 - none
+
+## Replacements: Gen 9
+
+- Mode: applied
+- Imported: 15, failed: 1, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 7
+
+### Failures (not imported)
+- `0911B.png`: normal sprites use 17 colours (max 16 incl. transparent)
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- none
+
+### Skipped sheets
+- none
