@@ -1480,3 +1480,24 @@ Entries here are things worth a look in the source art; none of them stop the im
 
 ### Skipped sheets
 - none
+
+## Replacements: Gen 2
+
+- Mode: applied
+- Imported: 14, failed: 1, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 6
+
+### Failures (not imported)
+- `0154B.png`: front has partially transparent pixels (2 stray pixels, alpha 239, at x=24,y=3 in front and front shiny). Even with those made opaque, normal colour (248, 104, 128) maps to several shiny colours {(248, 128, 104): 139, (248, 120, 112): 21}; front/front_shiny not pixel-aligned. Vanilla Meganium kept.
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- `0185B.png` (SPECIES_SUDOWOODO, `sudowoodo`)
+  - 2 back_shiny pixels do not match the shiny palette derived from the front sprite
+    - back shiny pixel (x=41, y=31): palette gives (248, 192, 168) but sheet has (248, 248, 248)
+    - back shiny pixel (x=42, y=31): palette gives (248, 192, 168) but sheet has (248, 248, 248)
+- `0248B.png` (SPECIES_TYRANITAR, `tyranitar`)
+  - 1 back_shiny pixels do not match the shiny palette derived from the front sprite
+    - back shiny pixel (x=26, y=48): palette gives (120, 112, 64) but sheet has (80, 72, 48)
+
+### Skipped sheets
+- none
