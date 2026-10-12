@@ -24,6 +24,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from split_sprite_sheet import SheetError, convert_sheet, write_result  # noqa: E402
 import apply_moemon_sprites as base  # noqa: E402
+import apply_moemon_forms as forms  # noqa: E402
 
 ROOT = base.ROOT
 DEFAULT_SOURCE = os.path.join(ROOT, "Moemon Database", "Sprite sets", "Replacements")
@@ -55,7 +56,9 @@ SUBFOLDERS = {
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--gen", type=int, required=True, choices=sorted(base.GEN_FOLDERS))
+    ap.add_argument("--gen", type=int, choices=sorted(base.GEN_FOLDERS))
+    ap.add_argument("--folder", choices=sorted(forms.FOLDERS),
+                    help="form folder (Megas, Gigantamax, Regional Forms) instead of --gen")
     ap.add_argument("--source", default=DEFAULT_SOURCE, help="'Replacements' folder (default: %(default)s)")
     ap.add_argument("--only", help="comma separated dex numbers to process")
     ap.add_argument("--exclude", help="comma separated dex numbers to skip (logged as skipped)")
@@ -65,7 +68,10 @@ def main():
     ap.add_argument("--report", default=os.path.join(ROOT, "sprite_import_report.md"))
     args = ap.parse_args()
 
-    folder = os.path.join(args.source, "Gen %d" % args.gen)
+    if bool(args.gen) == bool(args.folder):
+        sys.exit("give exactly one of --gen / --folder")
+    section = args.folder if args.folder else "Gen %d" % args.gen
+    folder = os.path.join(args.source, section)
     if not os.path.isdir(folder):
         sys.exit("source folder not found: %s" % folder)
     only = {int(x) for x in args.only.split(",")} if args.only else None
@@ -107,8 +113,37 @@ def main():
                          os.path.join(ROOT, paths["pal"]), os.path.join(ROOT, paths["shiny"]),
                          anim=is_anim)
 
+    if args.folder:
+        # Form folders: NNNN<letter>_<tag>.png picks the form species like apply_moemon_forms.py does.
+        pattern, picker = forms.FOLDERS[args.folder]
+        pattern = pattern.replace("A?_", "[A-Z]?_").replace("A_", "[A-Z]_")
+        entries = list(base.iter_entries(dex_numbers))
+        for name in sorted(os.listdir(folder)):
+            m = re.fullmatch(pattern, name)
+            if not m:
+                skipped.append((name, "does not match the %s naming rule" % args.folder))
+                continue
+            if name in skip_sheets:
+                skipped.append((name, "skipped by --skip-sheet"))
+                continue
+            dex, tag = int(m.group(1)), m.group(2)
+            if only and dex not in only:
+                continue
+            if dex in exclude:
+                skipped.append((name, "excluded (held back, see notes in report)"))
+                continue
+            cands = [e for e in entries if e["dex"] == dex and picker(e, tag)]
+            if len({c["front"] for c in cands}) != 1:
+                failed.append((name, "expected one matching graphic for dex %d, found %d species (%s)"
+                               % (dex, len(cands), ", ".join(c["species"] for c in cands))))
+                continue
+            n = len(ok)
+            run(name, os.path.join(folder, name), cands[0])
+            if len(ok) > n:  # other species sharing the same graphic: state/checklist only
+                ok.extend((name, c["species"]) + ok[n][2:] for c in cands[1:])
+
     seen = {}
-    for name in sorted(os.listdir(folder)):
+    for name in ([] if args.folder else sorted(os.listdir(folder))):
         sub = SUBFOLDERS.get((args.gen, name))
         if sub and os.path.isdir(os.path.join(folder, name)):
             for fn in sorted(os.listdir(os.path.join(folder, name))):
@@ -174,7 +209,7 @@ def main():
     print("\n%s %d species, %d failed, %d skipped%s" % (
         verb, len(ok), len(failed), len(skipped), "" if args.apply else "  (dry run; add --apply to write)"))
 
-    base.write_report(args.report, "Replacements: Gen %d" % args.gen, args.apply, ok, failed, skipped)
+    base.write_report(args.report, "Replacements: %s" % section, args.apply, ok, failed, skipped)
     print("report updated: %s" % args.report)
     if args.apply:
         base.record_state([x for x in ok if "(female graphics)" not in x[1]])
