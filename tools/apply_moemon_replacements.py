@@ -30,6 +30,8 @@ def main():
     ap.add_argument("--source", default=DEFAULT_SOURCE, help="'Replacements' folder (default: %(default)s)")
     ap.add_argument("--only", help="comma separated dex numbers to process")
     ap.add_argument("--exclude", help="comma separated dex numbers to skip (logged as skipped)")
+    ap.add_argument("--skip-sheet", help="comma separated sheet file names to ignore, e.g. 0547B.png "
+                    "(use to pick one of several replacements for the same dex number)")
     ap.add_argument("--apply", action="store_true", help="write files (default is a dry run)")
     ap.add_argument("--report", default=os.path.join(ROOT, "sprite_import_report.md"))
     args = ap.parse_args()
@@ -39,6 +41,7 @@ def main():
         sys.exit("source folder not found: %s" % folder)
     only = {int(x) for x in args.only.split(",")} if args.only else None
     exclude = {int(x) for x in args.exclude.split(",")} if args.exclude else set()
+    skip_sheets = set(args.skip_sheet.split(",")) if args.skip_sheet else set()
 
     dex_numbers = base.load_dex_numbers()
     syms = base.load_graphics_symbols()
@@ -52,6 +55,9 @@ def main():
             skipped.append((name, "does not match NNNNX.png"))
             continue
         dex = int(m.group(1))
+        if name in skip_sheets:
+            skipped.append((name, "skipped by --skip-sheet (another replacement for dex %d was chosen)" % dex))
+            continue
         if only and dex not in only:
             continue
         if dex in exclude:

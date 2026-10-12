@@ -1585,11 +1585,11 @@ Entries here are things worth a look in the source art; none of them stop the im
 ## Replacements: Gen 5
 
 - Mode: applied
-- Imported: 35, failed: 1, skipped: 0
-- Sheets whose colours were snapped to GBA 15-bit (informational): 19
+- Imported: 35, failed: 0, skipped: 1
+- Sheets whose colours were snapped to GBA 15-bit (informational): 20
 
 ### Failures (not imported)
-- `0547C.png`: dex 547 already has a replacement (0547B.png); not applied
+- none
 
 ### Warnings (imported, but the result differs slightly from the sheet)
 - `0523B.png` (SPECIES_ZEBSTRIKA, `zebstrika`)
@@ -1694,4 +1694,4 @@ Entries here are things worth a look in the source art; none of them stop the im
     - back shiny pixel (x=44, y=24): palette gives (240, 240, 232) but sheet has (248, 248, 248)
 
 ### Skipped sheets
-- none
+- `0547B.png`: skipped by --skip-sheet (another replacement for dex 547 was chosen)
