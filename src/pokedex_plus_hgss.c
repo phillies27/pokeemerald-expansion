@@ -153,6 +153,14 @@ static const u8 sText_FORMS_Buttons_PE[] = _("{A_BUTTON}FORM MODE  {START_BUTTON
 static const u8 sText_FORMS_Buttons_Decapped_PE[] = _("{A_BUTTON}Form Mode  {START_BUTTON}Evos");
 static const u8 sText_FORMS_Buttons_Submenu_PE[] = _("{DPAD_NONE}FORMs {A_BUTTON}CHECK {START_BUTTON}EVOs");
 static const u8 sText_FORMS_Buttons_Submenu_Decapped_PE[] = _("{DPAD_NONE}Forms {A_BUTTON}Check {START_BUTTON}Evos");
+static const u8 sText_SPRITES_Front[] = _("FRONT");
+static const u8 sText_SPRITES_Front_Decapped[] = _("Front");
+static const u8 sText_SPRITES_Back[] = _("BACK");
+static const u8 sText_SPRITES_Back_Decapped[] = _("Back");
+static const u8 sText_SPRITES_Buttons_Normal[] = _("{A_BUTTON}SHINY: OFF  {B_BUTTON}BACK");
+static const u8 sText_SPRITES_Buttons_Normal_Decapped[] = _("{A_BUTTON}Shiny: Off  {B_BUTTON}Back");
+static const u8 sText_SPRITES_Buttons_Shiny[] = _("{A_BUTTON}SHINY: ON  {B_BUTTON}BACK");
+static const u8 sText_SPRITES_Buttons_Shiny_Decapped[] = _("{A_BUTTON}Shiny: On  {B_BUTTON}Back");
 static const u8 sText_FORMS_NONE[] = _("{STR_VAR_1} has no alternate forms.");
 static const u8 sText_PlusSymbol[] = _("+");
 
@@ -188,6 +196,7 @@ static const u32 sPokedexPlusHGSS_ScreenEvolution_Tilemap_PE[] = INCGFX_U32("gra
 static const u32 sPokedexPlusHGSS_ScreenForms_Tilemap[] = INCGFX_U32("graphics/pokedex/hgss/tilemap_forms_screen.bin", ".smolTM");
 static const u32 sPokedexPlusHGSS_ScreenCry_Tilemap[] = INCGFX_U32("graphics/pokedex/hgss/tilemap_cry_screen.bin", ".smolTM");
 static const u32 sPokedexPlusHGSS_ScreenSize_Tilemap[] = INCGFX_U32("graphics/pokedex/hgss/tilemap_size_screen.bin", ".smolTM");
+static const u32 sPokedexPlusHGSS_ScreenSprites_Tilemap[] = INCGFX_U32("graphics/pokedex/hgss/tilemap_sprites_screen.bin", ".smolTM");
 static const u32 sPokedexPlusHGSS_ScreenSearchHoenn_Tilemap[] = INCGFX_U32("graphics/pokedex/hgss/tilemap_search_screen_hoenn.bin", ".smolTM");
 static const u32 sPokedexPlusHGSS_ScreenSearchNational_Tilemap[] = INCGFX_U32("graphics/pokedex/hgss/tilemap_search_screen_national.bin", ".smolTM");
 
@@ -249,6 +258,12 @@ static void Task_HandleFormsScreenInput(u8 taskId);
 static void PrintForms(u8 taskId, enum Species species);
 static void Task_SwitchScreensFromFormsScreen(u8 taskId);
 static void Task_ExitFormsScreen(u8 taskId);
+
+//Sprites screen (front/back sprite viewer with shiny toggle)
+static void Task_SwitchScreensFromInfoToSpritesScreen(u8 taskId);
+static void Task_LoadSpritesScreen(u8 taskId);
+static void Task_HandleSpritesScreenInput(u8 taskId);
+static void Task_SwitchScreensFromSpritesScreen(u8 taskId);
 
 //Physical/Special/Status category icon
 static u8 ShowCategoryIcon(enum DamageCategory category);
@@ -1414,8 +1429,24 @@ bool32 TryHandleInfoScreenInput_HGSS(u8 taskId)
         gTasks[taskId].func = Task_SwitchScreensFromInfoScreen;
         PlaySE(SE_PIN);
     }
+    else if (JOY_NEW(SELECT_BUTTON))
+    {
+        // Open the front/back sprite viewer
+        BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 0x10, RGB_BLACK);
+        gTasks[taskId].func = Task_SwitchScreensFromInfoToSpritesScreen;
+        PlaySE(SE_PIN);
+    }
 
     return TRUE;
+}
+
+static void Task_SwitchScreensFromInfoToSpritesScreen(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        FreeAndDestroyMonPicSprite(gTasks[taskId].tMonSpriteId);
+        gTasks[taskId].func = Task_LoadSpritesScreen;
+    }
 }
 
 #undef tMonSpriteId
@@ -1842,6 +1873,10 @@ static void LoadTilesetTilemapHGSS(u8 page)
     case SIZE_SCREEN:
         DecompressAndLoadBgGfxUsingHeap(3, sPokedexPlusHGSS_Menu_3_Gfx, 0x2000, 0, 0);
         CopyToBgTilemapBuffer(3, sPokedexPlusHGSS_ScreenSize_Tilemap, 0, 0);
+        break;
+    case SPRITES_SCREEN:
+        DecompressAndLoadBgGfxUsingHeap(3, sPokedexPlusHGSS_Menu_1_Gfx, 0x2000, 0, 0);
+        CopyToBgTilemapBuffer(3, sPokedexPlusHGSS_ScreenSprites_Tilemap, 0, 0);
         break;
     }
 }
@@ -4584,6 +4619,192 @@ bool32 TryLoadPlayArrowPalette_HGSS(bool8 cryPlaying)
 #undef tMonSpriteId
 #undef tTrainerSpriteId
 
+
+//************************************
+//*                                  *
+//*        Sprites screen            *
+//*                                  *
+//************************************
+// Opened with SELECT on the info page. Shows the front and back sprite of the
+// selected Pokémon side by side. A toggles between the normal and shiny palette.
+#define tFrontSpriteId data[4]
+#define tBackSpriteId  data[5]
+#define tIsShiny       data[6]
+
+// Both boxes are 120 pixels wide, sprites are centered inside them.
+#define SPRITES_SCREEN_BOX_WIDTH 120
+#define SPRITES_SCREEN_FRONT_X   (SPRITES_SCREEN_BOX_WIDTH / 2)
+#define SPRITES_SCREEN_BACK_X    (SPRITES_SCREEN_BOX_WIDTH + SPRITES_SCREEN_BOX_WIDTH / 2)
+#define SPRITES_SCREEN_Y         88
+#define SPRITES_SCREEN_HEADER_Y  20
+
+// Sprite palette slots used for the two pics (below gReservedSpritePaletteCount)
+#define SPRITES_SCREEN_FRONT_PAL_SLOT 0
+#define SPRITES_SCREEN_BACK_PAL_SLOT  1
+
+static void SpritesScreen_PrintHeaders(void)
+{
+    const u8 *front = !HGSS_DECAPPED ? sText_SPRITES_Front : sText_SPRITES_Front_Decapped;
+    const u8 *back = !HGSS_DECAPPED ? sText_SPRITES_Back : sText_SPRITES_Back_Decapped;
+
+    PrintInfoScreenTextWhite(front, GetStringCenterAlignXOffset(FONT_NORMAL, front, SPRITES_SCREEN_BOX_WIDTH), SPRITES_SCREEN_HEADER_Y);
+    PrintInfoScreenTextWhite(back, SPRITES_SCREEN_BOX_WIDTH + GetStringCenterAlignXOffset(FONT_NORMAL, back, SPRITES_SCREEN_BOX_WIDTH), SPRITES_SCREEN_HEADER_Y);
+}
+
+static void SpritesScreen_PrintNavigationButtons(bool32 isShiny)
+{
+    const u8 *str;
+
+    if (!HGSS_DECAPPED)
+        str = isShiny ? sText_SPRITES_Buttons_Shiny : sText_SPRITES_Buttons_Normal;
+    else
+        str = isShiny ? sText_SPRITES_Buttons_Shiny_Decapped : sText_SPRITES_Buttons_Normal_Decapped;
+
+    FillWindowPixelBuffer(WIN_NAVIGATION_BUTTONS, PIXEL_FILL(0));
+    AddTextPrinterParameterized3(WIN_NAVIGATION_BUTTONS, 0, 6, 0, sStatsPageNavigationTextColor, 0, str);
+    PutWindowTilemap(WIN_NAVIGATION_BUTTONS);
+    CopyWindowToVram(WIN_NAVIGATION_BUTTONS, COPYWIN_FULL);
+}
+
+// The front and back pic of a species share one palette, so toggling shiny
+// only needs the palettes swapped. The pic sprites themselves are left alone.
+static void SpritesScreen_LoadPalettes(bool32 isShiny)
+{
+    enum Species species = NationalPokedexNumToSpeciesForm(sPokedexListItem->dexNum);
+    const u16 *palette = GetMonSpritePalFromSpeciesAndPersonality(species, isShiny, GetPokedexMonPersonality(species));
+
+    LoadPalette(palette, OBJ_PLTT_ID(SPRITES_SCREEN_FRONT_PAL_SLOT), PLTT_SIZE_4BPP);
+    LoadPalette(palette, OBJ_PLTT_ID(SPRITES_SCREEN_BACK_PAL_SLOT), PLTT_SIZE_4BPP);
+}
+
+static u16 SpritesScreen_CreatePic(enum Species species, bool32 isFrontPic, s16 x, u8 paletteSlot)
+{
+    u16 spriteId = CreateMonPicSprite(species, FALSE, GetPokedexMonPersonality(species), isFrontPic, x, SPRITES_SCREEN_Y, paletteSlot, TAG_NONE);
+
+    if (spriteId != 0xFFFF)
+        gSprites[spriteId].oam.priority = 0;
+    return spriteId;
+}
+
+static void Task_LoadSpritesScreen(u8 taskId)
+{
+    switch (gMain.state)
+    {
+    case 0:
+    default:
+        if (!gPaletteFade.active)
+        {
+            u16 r2;
+
+            sPokedexView->currentPage = PAGE_SPRITES;
+            sPokedexView->selectedScreen = SPRITES_SCREEN;
+            gPokedexVBlankCB = gMain.vblankCallback;
+            SetVBlankCallback(NULL);
+            r2 = 0;
+            if (gTasks[taskId].data[1] != 0)
+                r2 += DISPCNT_OBJ_ON;
+            if (gTasks[taskId].data[2] != 0)
+                r2 |= DISPCNT_BG1_ON;
+            ResetOtherVideoRegisters(r2);
+            gMain.state = 1;
+        }
+        break;
+    case 1:
+        LoadTilesetTilemapHGSS(SPRITES_SCREEN);
+        FillWindowPixelBuffer(WIN_INFO, PIXEL_FILL(0));
+        PutWindowTilemap(WIN_INFO);
+        SpritesScreen_PrintHeaders();
+        CopyWindowToVram(WIN_INFO, COPYWIN_FULL);
+        CopyBgTilemapBufferToVram(1);
+        CopyBgTilemapBufferToVram(2);
+        CopyBgTilemapBufferToVram(3);
+        gMain.state++;
+        break;
+    case 2:
+        LoadScreenSelectBarMain(0xD);
+        LoadPokedexBgPalette(sPokedexView->isSearchResults);
+        gMain.state++;
+        break;
+    case 3:
+    {
+        enum Species species = NationalPokedexNumToSpeciesForm(sPokedexListItem->dexNum);
+
+        gTasks[taskId].tIsShiny = FALSE;
+        gTasks[taskId].tFrontSpriteId = SpritesScreen_CreatePic(species, TRUE, SPRITES_SCREEN_FRONT_X, SPRITES_SCREEN_FRONT_PAL_SLOT);
+        gTasks[taskId].tBackSpriteId = SpritesScreen_CreatePic(species, FALSE, SPRITES_SCREEN_BACK_X, SPRITES_SCREEN_BACK_PAL_SLOT);
+        SpritesScreen_PrintNavigationButtons(FALSE);
+        gMain.state++;
+        break;
+    }
+    case 4:
+    {
+        u32 preservedPalettes = 0;
+
+        if (gTasks[taskId].data[2] != 0)
+            preservedPalettes = 0x14; // each bit represents a palette index
+        BeginNormalPaletteFade(~preservedPalettes, 0, 16, 0, RGB_BLACK);
+        SetVBlankCallback(gPokedexVBlankCB);
+        gMain.state++;
+        break;
+    }
+    case 5:
+        SetGpuReg(REG_OFFSET_BLDCNT, 0);
+        SetGpuReg(REG_OFFSET_BLDALPHA, 0);
+        SetGpuReg(REG_OFFSET_BLDY, 0);
+        SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON);
+        HideBg(0);
+        ShowBg(1);
+        ShowBg(2);
+        ShowBg(3);
+        gMain.state++;
+        break;
+    case 6:
+        if (!gPaletteFade.active)
+            gMain.state++;
+        break;
+    case 7:
+        sPokedexView->screenSwitchState = 0;
+        // Make the info page reload its sprite when we return to it
+        gTasks[taskId].data[0] = 0;
+        gTasks[taskId].data[1] = 0;
+        gTasks[taskId].data[2] = 1;
+        gTasks[taskId].func = Task_HandleSpritesScreenInput;
+        gMain.state = 0;
+        break;
+    }
+}
+
+static void Task_HandleSpritesScreenInput(u8 taskId)
+{
+    if (JOY_NEW(B_BUTTON))
+    {
+        BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 0x10, RGB_BLACK);
+        gTasks[taskId].func = Task_SwitchScreensFromSpritesScreen;
+        PlaySE(SE_PC_OFF);
+    }
+    else if (JOY_NEW(A_BUTTON))
+    {
+        gTasks[taskId].tIsShiny ^= 1;
+        SpritesScreen_LoadPalettes(gTasks[taskId].tIsShiny);
+        SpritesScreen_PrintNavigationButtons(gTasks[taskId].tIsShiny);
+        PlaySE(SE_SELECT);
+    }
+}
+
+static void Task_SwitchScreensFromSpritesScreen(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        FreeAndDestroyMonPicSprite(gTasks[taskId].tFrontSpriteId);
+        FreeAndDestroyMonPicSprite(gTasks[taskId].tBackSpriteId);
+        sPokedexView->selectedScreen = INFO_SCREEN;
+        gTasks[taskId].func = Task_LoadInfoScreen;
+    }
+}
+
+#undef tFrontSpriteId
+#undef tBackSpriteId
+#undef tIsShiny
 
 
 //************************************

@@ -11,7 +11,8 @@ enum
     PAGE_UNK,
     PAGE_AREA,
     PAGE_CRY,
-    PAGE_SIZE
+    PAGE_SIZE,
+    PAGE_SPRITES // HGSS only: front/back sprite viewer, opened from the info page
 };
 
 enum
@@ -25,6 +26,7 @@ enum
     STATS_SCREEN,
     EVO_SCREEN,
     FORMS_SCREEN,
+    SPRITES_SCREEN,
 };
 
 enum
