@@ -1711,3 +1711,21 @@ Entries here are things worth a look in the source art; none of them stop the im
 
 ### Skipped sheets
 - `Vivillon_0666B/0666B.png`: identical copy of 0666B.png (already applied)
+
+## Replacements: Gen 7
+
+- Mode: applied
+- Imported: 14, failed: 2, skipped: 1
+- Sheets whose colours were snapped to GBA 15-bit (informational): 10
+
+### Failures (not imported)
+- `0773B.png`: normal sprites use 17 colours (max 16 incl. transparent)
+- `0795B.png`: normal colour (176, 176, 176) maps to several shiny colours {(96, 96, 96): 106, (64, 64, 64): 118}; front/front_shiny not pixel-aligned
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- `0730C.png` (SPECIES_PRIMARINA, `primarina`)
+  - 1 stray shiny pixel(s) ignored (shiny recolour taken by majority)
+    - front shiny pixel (x=47, y=34): normal colour (120, 160, 216) should be (208, 152, 160) but sheet has (144, 176, 176)
+
+### Skipped sheets
+- `0780C.png`: held back (Drampa): 613 back_shiny pixels do not match the shiny palette derived from the front sprite (back shiny art is shaded differently). Existing Drampa kept.
