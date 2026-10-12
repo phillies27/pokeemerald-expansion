@@ -1463,3 +1463,20 @@ Entries here are things worth a look in the source art; none of them stop the im
 
 ### Skipped sheets
 - none
+
+## Replacements: Gen 1
+
+- Mode: applied
+- Imported: 25, failed: 0, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 15
+
+### Failures (not imported)
+- none
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- `0151B.png` (SPECIES_MEW, `mew`)
+  - 1 stray shiny pixel(s) ignored (shiny recolour taken by majority)
+    - front shiny pixel (x=18, y=40): normal colour (224, 160, 144) should be (248, 184, 176) but sheet has (248, 224, 216)
+
+### Skipped sheets
+- none
