@@ -2,8 +2,8 @@
 """Generates the assets for the HGSS Pokedex "sprites" page.
 
 Outputs (both under graphics/pokedex/hgss/):
-  - tileset_menu1.png: extended by 5 tiles (0xd0-0xd4) holding clean box corners
-    and a clean box bottom edge. Existing tiles are left untouched.
+  - tileset_menu1.png: extended by 4 tiles (0xd0-0xd3) holding clean box corners
+    and a shadow band. Existing tiles are left untouched.
   - tilemap_sprites_screen.bin: two header boxes (front / back) with the INFO tab
     highlighted and a bottom bar for the button hints.
 
@@ -31,7 +31,8 @@ MAP_H = 21
 VISIBLE_COLS = 30
 
 # New tile ids
-T_BL, T_BOTTOM_LINE, T_BOTTOM_PLAIN, T_BR, T_TR = range(FIRST_NEW_TILE, FIRST_NEW_TILE + 5)
+T_BL, T_BR, T_TR, T_SHADOW = range(FIRST_NEW_TILE, FIRST_NEW_TILE + 4)
+T_BOTTOM_EDGE = 0x858  # existing tile 0x58 flipped vertically: plain white with a border on its last row
 
 # Layout (tile coordinates)
 TOP_ROW = 2
@@ -56,18 +57,23 @@ def build_tileset():
     px = src.load()
 
     # Source tiles (all < 0xd0, so unaffected by the extension)
-    bl_src = read_tile(px, 0xAA)    # bottom-left of upper box + top-left of lower box
-    line_src = read_tile(px, 0xA6)  # same, with a grid line pixel
-    plain_src = read_tile(px, 0xA7)
-    br_src = read_tile(px, 0xAB)
-    tr_src = read_tile(px, 0x93)    # top-right corner
+    # 0xaa / 0xab are the junction between two stacked boxes: their first three rows
+    # are the bottom-left / bottom-right corner curve of the upper box.
+    bl_curve = read_tile(px, 0xAA)[:3]
+    br_curve = read_tile(px, 0xAB)[:3]
+    left_edge = [row[::-1] for row in read_tile(px, 0x60)][0]  # one pixel row of the left border (0x460)
+    right_edge = read_tile(px, 0x99)[0]                         # one pixel row of the right border
+    tr_src = read_tile(px, 0x93)                                # top-right corner
 
     new_tiles = [
-        bl_src[:3] + make_rows(GRAY, GRAY, WHITE, WHITE, WHITE),
-        line_src[:5] + make_rows(WHITE, WHITE, WHITE),
-        plain_src[:5] + make_rows(WHITE, WHITE, WHITE),
-        br_src[:3] + make_rows(GRAY, GRAY, WHITE, WHITE, WHITE),
-        [[1 if v == 4 else v for v in row] for row in tr_src],  # drop the stray grid line pixels
+        # Bottom corners: border down the side, curve ending on the last pixel row so the
+        # box sits directly on the bar's own shadow band (like the big box on the stats page)
+        [left_edge] * 5 + bl_curve,
+        [right_edge] * 5 + br_curve,
+        # Top-right corner without the stray grid line pixels
+        [[1 if v == 4 else v for v in row] for row in tr_src],
+        # Shadow band for the part of the row under the boxes that has no bar below it
+        make_rows(GRAY, GRAY, WHITE, WHITE, WHITE, WHITE, WHITE, WHITE),
     ]
 
     dst = Image.new("P", (128, 112), 0)
@@ -136,7 +142,7 @@ def build_tilemap():
         # Bottom edge
         put(BOTTOM_ROW, c0, T_BL)
         for c in range(c0 + 1, c1):
-            put(BOTTOM_ROW, c, T_BOTTOM_LINE if c % 3 == 1 else T_BOTTOM_PLAIN)
+            put(BOTTOM_ROW, c, T_BOTTOM_EDGE)
         put(BOTTOM_ROW, c1, T_BR)
 
     box(*BOX_A)
@@ -150,6 +156,9 @@ def build_tilemap():
         put(19, c, (0x8C4, 0x8C5, 0x8C5)[i % 3])
     put(18, 19, 0xCA)
     put(19, 19, 0xCE)
+    # Continue the shadow band under the boxes where the bar ends
+    for c in range(20, VISIBLE_COLS):
+        put(18, c, T_SHADOW)
 
     TILEMAP_OUT.write_bytes(struct.pack(f"<{len(out)}H", *out))
 
