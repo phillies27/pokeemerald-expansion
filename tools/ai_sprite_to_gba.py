@@ -177,23 +177,53 @@ def luma(c):
     return 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2]
 
 
-def make_palette(sources, budget):
+def quantize(cols, k):
+    """Median-cut a list of RGB tuples down to at most k colours."""
+    if not cols or k <= 0:
+        return []
+    uniq = Counter(cols)
+    if len(uniq) <= k:
+        return list(uniq)
+    strip = Image.new("RGB", (len(cols), 1))
+    strip.putdata(cols)
+    q = strip.quantize(colors=k, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
+    flat = q.getpalette()
+    return [tuple(flat[3 * i:3 * i + 3]) for i in sorted(set(sss.pixels(q)))]
+
+
+def dist(a, b):
+    return sum((p - q) ** 2 for p, q in zip(a, b)) ** 0.5
+
+
+def make_palette(sources, budget, base=None, extra_k=4, thr=48):
+    """-> list of (colour, shiny colour or None), darkest first.
+
+    base = (normal colours, shiny colours) of an existing sprite. With it the palette is SEEDED: the
+    base colours that the picture uses most are kept (so skin / hair / fur match the existing sprite and
+    the canon shiny colours carry over), and only `extra_k` new colours are quantised for whatever the
+    base can't express (a cap, a new accessory...)."""
     cols = [p for s in sources for p in s if isinstance(p, tuple)]
     if not cols:
         raise SpriteError("no opaque pixels to build a palette from")
-    uniq = Counter(cols)
-    if len(uniq) <= budget:
-        pal = list(uniq)
+    if base:
+        bn, bs = base
+        use = Counter()
+        for c, n in Counter(cols).items():
+            j = min(range(len(bn)), key=lambda i: dist(c, bn[i]))
+            if dist(c, bn[j]) <= thr:
+                use[j] += n
+        keep = [j for j, _ in use.most_common(max(0, budget - extra_k))]
+        kept = [bn[j] for j in keep]
+        rest = [c for c in cols if not kept or min(dist(c, k) for k in kept) > thr]
+        extra = quantize(rest, budget - len(kept))
+        entries = [(bn[j], bs[j]) for j in keep] + [(c, None) for c in extra]
     else:
-        strip = Image.new("RGB", (len(cols), 1))
-        strip.putdata(cols)
-        q = strip.quantize(colors=budget, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
-        flat = q.getpalette()
-        pal = [tuple(flat[3 * i:3 * i + 3]) for i in sorted(set(sss.pixels(q)))]
-    out = []
-    for c in sorted((sss.snap555(c) for c in pal), key=luma):
-        if c not in out:
-            out.append(c)
+        entries = [(c, None) for c in quantize(cols, budget)]
+    out, seen = [], set()
+    for c, sh in sorted(((sss.snap555(c), sh) for c, sh in entries), key=lambda t: luma(t[0])):
+        if c not in seen:
+            seen.add(c)
+            out.append((c, sh))
     return out
 
 
@@ -208,11 +238,15 @@ def to_indices(px, pal, outline_idx):
     return [0 if p is None else outline_idx if p == OL else nearest(p) for p in px]
 
 
-def shiny_palette(palette, outline_idx, hue, sat, val):
+def shiny_palette(palette, outline_idx, hue, sat, val, fixed=None):
+    fixed = fixed or {}
     out = []
     for i, c in enumerate(palette):
         if i == 0 or i == outline_idx:
             out.append(c)
+            continue
+        if i in fixed:  # shiny colour taken from the base sprite
+            out.append(fixed[i])
             continue
         h, s, v = colorsys.rgb_to_hsv(*(x / 255 for x in c))
         if s >= 0.12 and v >= 0.2:  # leave greys / near-black alone so outlines and whites stay put
@@ -248,7 +282,7 @@ def write_previews(res, directory, stem, write_sheet):
 
 # ----------------------------------------------------------------------------- conversion
 
-def convert(front_path, back_path, existing_back, args):
+def convert(front_path, back_path, existing_back, args, base=None):
     warnings = []
     front_px = fit_to_tile(load_subject(front_path, args), args, warnings, os.path.basename(front_path))
     quant_sources = [front_px]
@@ -264,12 +298,17 @@ def convert(front_path, back_path, existing_back, args):
         warnings.append("no --back given: the front sprite is used as a placeholder back sprite")
 
     budget = max(1, min(args.colors, 15)) - (1 if args.outline else 0)
-    pal = make_palette(quant_sources, budget)
+    entries = make_palette(quant_sources, budget, base, args.extra_colors, args.base_threshold)
+    pal = [c for c, _ in entries]
     outline_idx = len(pal) + 1 if args.outline else None
     palette = [sss.snap555(args.bg_index_color)] + pal
     if args.outline:
         palette.append(sss.snap555(args.outline_color))
-    shiny = shiny_palette(palette, outline_idx, args.shiny_hue, args.shiny_sat, args.shiny_val)
+    fixed = {i + 1: sh for i, (_, sh) in enumerate(entries) if sh is not None}
+    shiny = shiny_palette(palette, outline_idx, args.shiny_hue, args.shiny_sat, args.shiny_val, fixed)
+    if base:
+        warnings.append("palette seeded from the base sprite: %d base colours kept (canon shiny colours carried "
+                        "over), %d new colours" % (len(fixed), len(pal) - len(fixed)))
     front_idx = to_indices(front_px, pal, outline_idx)
     back_idx = to_indices(back_px, pal, outline_idx)
     used = len(set(front_idx) | set(back_idx))
@@ -278,6 +317,29 @@ def convert(front_path, back_path, existing_back, args):
         shiny.append((0, 0, 0))
     return {"palette": palette, "shiny_palette": shiny, "front_idx": front_idx, "back_idx": back_idx,
             "colours_used": used, "warnings": warnings}
+
+
+def read_pal(path):
+    with open(path) as f:
+        tok = f.read().split()
+    n = int(tok[2])
+    v = [int(x) for x in tok[3:3 + 3 * n]]
+    return [tuple(v[3 * i:3 * i + 3]) for i in range(n)]
+
+
+def load_base(spec, repo):
+    """--base-palette: a normal.pal path or a species constant -> (normal, shiny) colour lists without index 0
+    (unused all-black padding entries are dropped)."""
+    if os.path.exists(spec):
+        normal, shiny = spec, os.path.join(os.path.dirname(spec), "shiny.pal")
+    else:
+        paths = repo.paths(repo.resolve(spec))
+        normal = os.path.join(repo.ams.ROOT, paths["pal"])
+        shiny = os.path.join(repo.ams.ROOT, paths["shiny"])
+    bn = read_pal(normal)[1:]
+    bs = read_pal(shiny)[1:] if os.path.exists(shiny) else bn
+    keep = [i for i, c in enumerate(bn) if c != (0, 0, 0)]
+    return [bn[i] for i in keep], [bs[i] for i in keep]
 
 
 # ----------------------------------------------------------------------------- repo targets
@@ -328,7 +390,8 @@ def run_job(front, back, species, out_dir, stem, args, repo):
         if not back:
             existing_back = load_existing_back(os.path.join(repo.ams.ROOT, paths["back"]))
 
-    res = convert(front, back, existing_back, args)
+    base = load_base(args.base_palette, repo) if args.base_palette else None
+    res = convert(front, back, existing_back, args, base)
     pv_dir = args.preview_dir or os.path.join(os.path.dirname(os.path.abspath(front)), "gba_preview")
     write_previews(res, pv_dir, stem, args.write_sheet)
 
@@ -406,6 +469,12 @@ def main():
     g.add_argument("--resample", choices=["box", "lanczos", "nearest"], default="box")
     g.add_argument("--alpha-threshold", type=int, default=128)
     g.add_argument("--colors", type=int, default=15, help="opaque colours incl. outline, max 15 (default 15)")
+    g.add_argument("--base-palette", help="seed the palette from an existing sprite: a normal.pal path or a species "
+                   "constant (e.g. SPECIES_PIKACHU). Keeps its skin/hair/fur colours and canon shiny, and only "
+                   "quantises --extra-colors new ones. Best for variants of an existing Pokemon.")
+    g.add_argument("--extra-colors", type=int, default=4, help="new colours allowed with --base-palette (default 4)")
+    g.add_argument("--base-threshold", type=float, default=48.0, help="RGB distance within which a picture colour "
+                   "counts as a base colour (default 48)")
     g.add_argument("--outline", action="store_true", help="add a 1px dark outline around the silhouette")
     g.add_argument("--outline-color", type=parse_rgb, default=(16, 16, 16))
     g.add_argument("--bg-index-color", type=parse_rgb, default=DEFAULT_BG,
@@ -437,7 +506,8 @@ def main():
         stem = os.path.splitext(os.path.basename(args.front))[0]
         jobs = [(args.front, args.back, args.species, args.out, stem)]
 
-    repo = Repo() if any(j[2] for j in jobs) else None
+    need_repo = any(j[2] for j in jobs) or (args.base_palette and not os.path.exists(args.base_palette))
+    repo = Repo() if need_repo else None
     done, failed = [], []
     for front, back, species, out_dir, stem in jobs:
         try:
