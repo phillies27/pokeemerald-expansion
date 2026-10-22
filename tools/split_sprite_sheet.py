@@ -70,8 +70,11 @@ def save_indexed(path, size, idx_data, colors):
     img.save(path, bits=4, optimize=False)
 
 
-def convert_sheet(sheet_path, order=None, bg=None):
-    """Validate a sheet and return its converted data. Raises SheetError."""
+def convert_sheet(sheet_path, order=None, bg=None, lenient=False):
+    """Validate a sheet and return its converted data. Raises SheetError.
+
+    lenient=True does not fail when a normal colour is recoloured several ways in the shiny sprite:
+    the majority shiny colour is used for the whole colour ("flattening" the odd shiny pixels)."""
     order = order or DEFAULT_ORDER
     if sorted(order) != sorted(DEFAULT_ORDER):
         raise SheetError("order must be a permutation of front,front_shiny,back,back_shiny")
@@ -116,6 +119,19 @@ def convert_sheet(sheet_path, order=None, bg=None):
     if changed:
         warnings.append("colours snapped to 15-bit")
 
+    # Helpers for messages: everything is reported as the RAW colour found in the sheet (what an
+    # image editor shows) and as coordinates in the whole 256x64 sheet, not in the 64x64 tile.
+    def where(name, i):
+        return order.index(name) * TILE + i % TILE, i // TILE
+
+    def raw(name, i):
+        return tuple(tiles[name][i][:3])
+
+    def raw_like(names, snapped):
+        """Most common raw colour (in the given tiles) that snaps to `snapped`."""
+        c = Counter(tuple(p[:3]) for n in names for p in tiles[n] if p[3] and snap555(p[:3]) == snapped)
+        return c.most_common(1)[0][0] if c else snapped
+
     # Build normal palette from the front sprite, background first.
     fn, fs = rgb["front"], rgb["front_shiny"]
     palette = [bg]
@@ -127,7 +143,37 @@ def convert_sheet(sheet_path, order=None, bg=None):
         if c not in palette:
             palette.append(c)
     if len(palette) > 16:
-        raise SheetError("normal sprites use %d colours (max 16 incl. transparent)" % len(palette))
+        front_set = set(fn) | {bg}
+        back_only = [c for c in dict.fromkeys(rgb["back"]) if c not in front_set]
+        lines = []
+        for c in back_only:
+            near = min(front_set, key=lambda o: sum((p - q) ** 2 for p, q in zip(c, o)))
+            dist = sum((p - q) ** 2 for p, q in zip(c, near)) ** 0.5
+            lines.append("back-only RGB %s (%d px) ~ front RGB %s (distance %.0f)" % (
+                raw_like(["back"], c), rgb["back"].count(c), raw_like(["front"], near), dist))
+        # closest colour pairs overall (merging a pair frees one slot); safe when both have the same shiny colour
+        shiny_of = defaultdict(set)
+        for n_, s_ in (("front", "front_shiny"), ("back", "back_shiny")):
+            for a_, b_ in zip(rgb[n_], rgb[s_]):
+                shiny_of[a_].add(b_)
+        allc = list(palette)
+        counts_all = Counter(fn) + Counter(rgb["back"])
+        pairs = []
+        for ia in range(len(allc)):
+            for ib in range(ia + 1, len(allc)):
+                d_ = sum((p - q) ** 2 for p, q in zip(allc[ia], allc[ib])) ** 0.5
+                pairs.append((d_, allc[ia], allc[ib]))
+        pairs.sort(key=lambda t: t[0])
+        cand = ["RGB %s (%d px) + RGB %s (%d px), distance %.0f, %s" % (
+            raw_like(["front", "back"], a_), counts_all[a_], raw_like(["front", "back"], b_), counts_all[b_], d_,
+            "same shiny colour" if shiny_of[a_] == shiny_of[b_] and len(shiny_of[a_]) == 1 else "shiny colours differ")
+            for d_, a_, b_ in pairs[:8]]
+        raise SheetError("front+back share one palette: %d colours incl. transparent (max 16, need to remove %d); "
+                         "the front alone uses %d, %d colours appear only on the back. Merge colours "
+                         "(recolour one to the other in the normal AND the shiny tiles where used). "
+                         "Back-only colours: %s. Closest colour pairs overall: %s"
+                         % (len(palette), len(palette) - 16, len(front_set), len(back_only),
+                            "; ".join(lines) or "none", "; ".join(cand)))
 
     # Derive shiny palette from the pixel-aligned front sprites.
     mapping = defaultdict(Counter)
@@ -135,6 +181,7 @@ def convert_sheet(sheet_path, order=None, bg=None):
         mapping[a][b] += 1
     shiny = {}
     stray = 0
+    conflicts = []  # every normal colour that is recoloured inconsistently (all reported at once)
     for a, counts in mapping.items():
         if len(counts) > 1:
             # A palette can only recolour a colour one way. Tolerate a few stray pixels
@@ -142,10 +189,24 @@ def convert_sheet(sheet_path, order=None, bg=None):
             ranked = counts.most_common()
             minority = sum(n for _, n in ranked[1:])
             if minority > MAX_STRAY_PIXELS:
-                raise SheetError("normal colour %s maps to several shiny colours %s; front/front_shiny not pixel-aligned"
-                                 % (a, dict(counts)))
+                major = ranked[0][0]
+                parts = []
+                for k, n in ranked[1:]:
+                    odd = [i for i, (x, y) in enumerate(zip(fn, fs)) if x == a and y == k]
+                    parts.append("%d px that become RGB %s at front_shiny sheet (x, y) %s%s (the normal pixel is "
+                                 "%d px further left)" % (
+                                     n, raw_like(["front_shiny"], k),
+                                     ", ".join("(%d, %d)" % where("front_shiny", i) for i in odd[:40]),
+                                     " ... (%d more)" % (len(odd) - 40) if len(odd) > 40 else "", TILE))
+                conflicts.append("normal front RGB %s: %d px become shiny RGB %s, but %s" % (
+                    raw_like(["front"], a), ranked[0][1], raw_like(["front_shiny"], major), "; and ".join(parts)))
             stray += minority
         shiny[a] = counts.most_common(1)[0][0]
+    if conflicts and not lenient:
+        raise SheetError(
+            "%d normal colour(s) are recoloured two ways in the shiny sprite, but a palette slot can only have one "
+            "shiny colour. Fix: make the odd normal pixels a slightly different colour (needs a free palette slot) "
+            "or give those front_shiny pixels the colour of the rest. %s" % (len(conflicts), " || ".join(conflicts)))
     if stray:
         warnings.append("%d stray shiny pixel(s) ignored (shiny recolour taken by majority)" % stray)
     if shiny[bg] != bg:
@@ -154,8 +215,10 @@ def convert_sheet(sheet_path, order=None, bg=None):
     if stray:
         for i, (a, b) in enumerate(zip(fn, fs)):
             if shiny[a] != b:
-                details.append("front shiny pixel (x=%d, y=%d): normal colour %s should be %s but sheet has %s"
-                               % (i % TILE, i // TILE, a, shiny[a], b))
+                details.append("front_shiny sheet pixel (x=%d, y=%d): has RGB %s but should be RGB %s "
+                               "(the other shiny pixels of the same normal colour %s)"
+                               % (*where("front_shiny", i), raw("front_shiny", i),
+                                  raw_like(["front_shiny"], shiny[a]), raw("front", i)))
     # Colours only the back sprite uses: look them up by comparing back vs back_shiny.
     back_map = defaultdict(Counter)
     for a, b in zip(rgb["back"], rgb["back_shiny"]):
@@ -178,8 +241,11 @@ def convert_sheet(sheet_path, order=None, bg=None):
         warnings.append("%d back_shiny pixels do not match the shiny palette derived from the front sprite" % mismatch)
         for i, (k, c) in enumerate(zip(back_idx, rgb["back_shiny"])):
             if shiny_palette[k] != c:
-                details.append("back shiny pixel (x=%d, y=%d): palette gives %s but sheet has %s"
-                               % (i % TILE, i // TILE, shiny_palette[k], c))
+                details.append("back_shiny sheet pixel (x=%d, y=%d): has RGB %s but should be RGB %s "
+                               "(what the front sprite's shiny uses for this normal colour %s)"
+                               % (*where("back_shiny", i), raw("back_shiny", i),
+                                  raw_like(["front_shiny", "back_shiny"], shiny_palette[k]),
+                                  raw("back", i)))
 
     used = len({index[c] for c in fn} | set(back_idx))
 

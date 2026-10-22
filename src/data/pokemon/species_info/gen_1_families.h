@@ -41,7 +41,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Bulbasaur,
         .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(32, 40) : MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 14 : 13,
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 14 : 3,
         .frontAnimFrames = ANIM_FRAMES(
             ANIMCMD_FRAME(0, 30),
             ANIMCMD_FRAME(1, 30),
@@ -57,7 +57,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .iconSprite = gMonIcon_Bulbasaur,
         .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4,
         .pokemonJumpType = PKMN_JUMP_TYPE_SLOW,
-        SHADOW(1, -1, SHADOW_SIZE_S)
+        SHADOW(1, 7, SHADOW_SIZE_S)
         FOOTPRINT(Bulbasaur)
         OVERWORLD(
             sPicTable_Bulbasaur,
@@ -112,7 +112,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Ivysaur,
         .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(40, 48) : MON_COORDS_SIZE(56, 48),
-        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 10 : 9,
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 10 : 0,
         .frontAnimFrames = ANIM_FRAMES(
             ANIMCMD_FRAME(0, 1),
             ANIMCMD_FRAME(1, 36),
@@ -128,7 +128,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .iconSprite = gMonIcon_Ivysaur,
         .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(-1, 3, SHADOW_SIZE_L)
+        SHADOW(-1, 14, SHADOW_SIZE_L)
         FOOTPRINT(Ivysaur)
         OVERWORLD(
             sPicTable_Ivysaur,

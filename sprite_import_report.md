@@ -1464,6 +1464,1417 @@ Entries here are things worth a look in the source art; none of them stop the im
 ### Skipped sheets
 - none
 
+## Replacements 2: Gen 1
+
+- Mode: applied
+- Imported: 3, failed: 0, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 2
+
+### Failures (not imported)
+- none
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- none
+
+### Skipped sheets
+- none
+
+## Replacements 2: Gen 2
+
+- Mode: applied
+- Imported: 29, failed: 0, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 12
+
+### Failures (not imported)
+- none
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- none
+
+### Skipped sheets
+- none
+
+## Replacements 2: Gen 3
+
+- Mode: applied
+- Imported: 41, failed: 0, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 20
+
+### Failures (not imported)
+- none
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- none
+
+### Skipped sheets
+- none
+
+## Replacements 2: Gen 4
+
+- Mode: applied
+- Imported: 36, failed: 0, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 25
+
+### Failures (not imported)
+- none
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- `0445(M)-1.png` (SPECIES_GARCHOMP_MEGA, `garchomp/mega`)
+  - 430 stray shiny pixel(s) ignored (shiny recolour taken by majority)
+    - front_shiny sheet pixel (x=105, y=9): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=104, y=10): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=112, y=11): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=87, y=12): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=112, y=12): has RGB (31, 28, 61) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=113, y=12): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=86, y=13): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=88, y=13): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=84, y=14): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=85, y=14): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=86, y=14): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=87, y=14): has RGB (6, 36, 43) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=88, y=14): has RGB (20, 55, 61) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=110, y=14): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=86, y=15): has RGB (6, 36, 43) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=88, y=15): has RGB (20, 55, 61) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=99, y=15): has RGB (130, 33, 24) but should be RGB (255, 255, 255) (the other shiny pixels of the same normal colour (255, 255, 255))
+    - front_shiny sheet pixel (x=100, y=15): has RGB (255, 255, 255) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=101, y=15): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=85, y=16): has RGB (0, 0, 0) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=86, y=16): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=87, y=16): has RGB (20, 55, 61) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=88, y=16): has RGB (30, 75, 81) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=92, y=16): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=97, y=16): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=100, y=16): has RGB (191, 74, 53) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=104, y=16): has RGB (201, 135, 106) but should be RGB (147, 77, 70) (the other shiny pixels of the same normal colour (147, 94, 68))
+    - front_shiny sheet pixel (x=105, y=16): has RGB (201, 135, 106) but should be RGB (147, 77, 70) (the other shiny pixels of the same normal colour (147, 94, 68))
+    - front_shiny sheet pixel (x=106, y=16): has RGB (201, 135, 106) but should be RGB (147, 77, 70) (the other shiny pixels of the same normal colour (147, 94, 68))
+    - front_shiny sheet pixel (x=108, y=16): has RGB (130, 33, 24) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=109, y=16): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=85, y=17): has RGB (6, 36, 43) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=87, y=17): has RGB (30, 75, 81) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=99, y=17): has RGB (130, 33, 24) but should be RGB (201, 135, 106) (the other shiny pixels of the same normal colour (214, 159, 119))
+    - front_shiny sheet pixel (x=100, y=17): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=101, y=17): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=104, y=17): has RGB (201, 135, 106) but should be RGB (242, 185, 159) (the other shiny pixels of the same normal colour (248, 224, 192))
+    - front_shiny sheet pixel (x=105, y=17): has RGB (201, 135, 106) but should be RGB (242, 185, 159) (the other shiny pixels of the same normal colour (248, 224, 192))
+    - front_shiny sheet pixel (x=107, y=17): has RGB (130, 33, 24) but should be RGB (147, 77, 70) (the other shiny pixels of the same normal colour (147, 94, 68))
+    - front_shiny sheet pixel (x=108, y=17): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=109, y=17): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=110, y=17): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=111, y=17): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=112, y=17): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=87, y=18): has RGB (30, 75, 81) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=92, y=18): has RGB (30, 75, 81) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=94, y=18): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=103, y=18): has RGB (201, 135, 106) but should be RGB (242, 185, 159) (the other shiny pixels of the same normal colour (248, 224, 192))
+    - front_shiny sheet pixel (x=107, y=18): has RGB (130, 33, 24) but should be RGB (31, 28, 61) (the other shiny pixels of the same normal colour (33, 38, 58))
+    - front_shiny sheet pixel (x=108, y=18): has RGB (147, 77, 70) but should be RGB (31, 28, 61) (the other shiny pixels of the same normal colour (33, 38, 58))
+    - front_shiny sheet pixel (x=111, y=18): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=113, y=18): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=87, y=19): has RGB (30, 75, 81) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=107, y=19): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=108, y=19): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=109, y=19): has RGB (147, 77, 70) but should be RGB (31, 28, 61) (the other shiny pixels of the same normal colour (33, 38, 58))
+    - front_shiny sheet pixel (x=111, y=19): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=107, y=20): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=108, y=20): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=111, y=20): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=87, y=21): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=88, y=21): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=107, y=21): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=108, y=21): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=109, y=21): has RGB (130, 33, 24) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=110, y=21): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=111, y=21): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=75, y=22): has RGB (31, 28, 61) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=86, y=22): has RGB (0, 0, 0) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=87, y=22): has RGB (0, 0, 0) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=88, y=22): has RGB (0, 0, 0) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=89, y=22): has RGB (0, 0, 0) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=90, y=22): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=91, y=22): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=106, y=22): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=107, y=22): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=110, y=22): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=73, y=23): has RGB (144, 176, 176) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=74, y=23): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=75, y=23): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=83, y=23): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=84, y=23): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=85, y=23): has RGB (6, 36, 43) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=86, y=23): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=89, y=23): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=90, y=23): has RGB (6, 36, 43) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=91, y=23): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=92, y=23): has RGB (30, 75, 81) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=102, y=23): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=105, y=23): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=106, y=23): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=110, y=23): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=75, y=24): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=84, y=24): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=91, y=24): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=106, y=24): has RGB (130, 33, 24) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=109, y=24): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=72, y=25): has RGB (144, 176, 176) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=73, y=25): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=74, y=25): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=75, y=25): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=76, y=25): has RGB (0, 0, 0) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=72, y=26): has RGB (144, 176, 176) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=73, y=26): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=74, y=26): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=75, y=26): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=76, y=26): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=88, y=26): has RGB (30, 75, 81) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=91, y=26): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=92, y=26): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=93, y=26): has RGB (0, 0, 0) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=94, y=26): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=102, y=26): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=103, y=26): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=72, y=27): has RGB (144, 176, 176) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=73, y=27): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=74, y=27): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=75, y=27): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=76, y=27): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=88, y=27): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=90, y=27): has RGB (20, 55, 61) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=92, y=27): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=93, y=27): has RGB (0, 0, 0) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=94, y=27): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=99, y=27): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=72, y=28): has RGB (144, 176, 176) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=73, y=28): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=74, y=28): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=75, y=28): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=76, y=28): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=77, y=28): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=83, y=28): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=84, y=28): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=88, y=28): has RGB (30, 75, 81) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=94, y=28): has RGB (0, 0, 0) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=95, y=28): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=96, y=28): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=99, y=28): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=72, y=29): has RGB (144, 176, 176) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=73, y=29): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=74, y=29): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=75, y=29): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=76, y=29): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=77, y=29): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=84, y=29): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=85, y=29): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=86, y=29): has RGB (30, 75, 81) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=87, y=29): has RGB (30, 75, 81) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=88, y=29): has RGB (30, 75, 81) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=94, y=29): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=95, y=29): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=96, y=29): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=99, y=29): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=72, y=30): has RGB (144, 176, 176) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=73, y=30): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=74, y=30): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=75, y=30): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=76, y=30): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=77, y=30): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=82, y=30): has RGB (144, 176, 176) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=93, y=30): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=94, y=30): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=95, y=30): has RGB (0, 0, 0) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=96, y=30): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=97, y=30): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=98, y=30): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=99, y=30): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=72, y=31): has RGB (144, 176, 176) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=73, y=31): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=75, y=31): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=76, y=31): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=79, y=31): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=88, y=31): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=92, y=31): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=94, y=31): has RGB (20, 55, 61) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=95, y=31): has RGB (0, 0, 0) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=96, y=31): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=97, y=31): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=100, y=31): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=75, y=32): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=76, y=32): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=78, y=32): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=79, y=32): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=80, y=32): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=81, y=32): has RGB (55, 43, 89) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=84, y=32): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=85, y=32): has RGB (0, 0, 0) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=86, y=32): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=87, y=32): has RGB (0, 0, 0) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=88, y=32): has RGB (0, 0, 0) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=89, y=32): has RGB (6, 36, 43) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=90, y=32): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=93, y=32): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=94, y=32): has RGB (20, 55, 61) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=96, y=32): has RGB (0, 0, 0) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=73, y=33): has RGB (144, 176, 176) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=74, y=33): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=76, y=33): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=77, y=33): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=78, y=33): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=79, y=33): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=83, y=33): has RGB (55, 43, 89) but should be RGB (31, 28, 61) (the other shiny pixels of the same normal colour (33, 38, 58))
+    - front_shiny sheet pixel (x=84, y=33): has RGB (31, 28, 61) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=85, y=33): has RGB (31, 28, 61) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=86, y=33): has RGB (31, 28, 61) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=87, y=33): has RGB (31, 28, 61) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=88, y=33): has RGB (0, 0, 0) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=89, y=33): has RGB (0, 0, 0) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=90, y=33): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=91, y=33): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=93, y=33): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=95, y=33): has RGB (20, 55, 61) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=96, y=33): has RGB (0, 0, 0) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=97, y=33): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=98, y=33): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=111, y=33): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=77, y=34): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=78, y=34): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=83, y=34): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=84, y=34): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=85, y=34): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=86, y=34): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=87, y=34): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=88, y=34): has RGB (31, 28, 61) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=89, y=34): has RGB (31, 28, 61) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=90, y=34): has RGB (0, 0, 0) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=91, y=34): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=92, y=34): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=94, y=34): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=95, y=34): has RGB (20, 55, 61) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=96, y=34): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=97, y=34): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=98, y=34): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=99, y=34): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=111, y=34): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=112, y=34): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=74, y=35): has RGB (20, 55, 61) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=75, y=35): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=78, y=35): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=79, y=35): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=80, y=35): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=82, y=35): has RGB (109, 109, 160) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=84, y=35): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=85, y=35): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=86, y=35): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=87, y=35): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=88, y=35): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=89, y=35): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=91, y=35): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=92, y=35): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=94, y=35): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=97, y=35): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=98, y=35): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=99, y=35): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=100, y=35): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=103, y=35): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=112, y=35): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=75, y=36): has RGB (20, 55, 61) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=76, y=36): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=77, y=36): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=79, y=36): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=80, y=36): has RGB (191, 74, 53) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=81, y=36): has RGB (191, 74, 53) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=82, y=36): has RGB (255, 255, 255) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=83, y=36): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=87, y=36): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=88, y=36): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=89, y=36): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=90, y=36): has RGB (31, 28, 61) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=93, y=36): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=94, y=36): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=95, y=36): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=97, y=36): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=98, y=36): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=102, y=36): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=76, y=37): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=77, y=37): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=78, y=37): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=79, y=37): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=80, y=37): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=81, y=37): has RGB (191, 74, 53) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=82, y=37): has RGB (255, 255, 255) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=83, y=37): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=84, y=37): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=85, y=37): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=86, y=37): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=87, y=37): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=88, y=37): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=89, y=37): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=90, y=37): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=91, y=37): has RGB (0, 0, 0) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=92, y=37): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=98, y=37): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=99, y=37): has RGB (0, 0, 0) but should be RGB (109, 109, 160) (the other shiny pixels of the same normal colour (125, 141, 163))
+    - front_shiny sheet pixel (x=100, y=37): has RGB (109, 109, 160) but should be RGB (255, 255, 255) (the other shiny pixels of the same normal colour (255, 255, 255))
+    - front_shiny sheet pixel (x=101, y=37): has RGB (255, 255, 255) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=102, y=37): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=109, y=37): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=115, y=37): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=116, y=37): has RGB (0, 0, 0) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=75, y=38): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=77, y=38): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=78, y=38): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=79, y=38): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=80, y=38): has RGB (109, 109, 160) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=81, y=38): has RGB (255, 255, 255) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=82, y=38): has RGB (255, 255, 255) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=83, y=38): has RGB (255, 255, 255) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=84, y=38): has RGB (109, 109, 160) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=85, y=38): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=86, y=38): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=87, y=38): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=88, y=38): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=89, y=38): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=90, y=38): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=91, y=38): has RGB (130, 33, 24) but should be RGB (55, 43, 89) (the other shiny pixels of the same normal colour (50, 61, 79))
+    - front_shiny sheet pixel (x=99, y=38): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=100, y=38): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=101, y=38): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=112, y=38): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=115, y=38): has RGB (147, 77, 70) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=116, y=38): has RGB (147, 77, 70) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=79, y=39): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=80, y=39): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=81, y=39): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=82, y=39): has RGB (255, 255, 255) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=83, y=39): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=84, y=39): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=85, y=39): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=86, y=39): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=87, y=39): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=88, y=39): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=89, y=39): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=92, y=39): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=93, y=39): has RGB (6, 36, 43) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=101, y=39): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=102, y=39): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=103, y=39): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=104, y=39): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=107, y=39): has RGB (130, 33, 24) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=108, y=39): has RGB (130, 33, 24) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=110, y=39): has RGB (130, 33, 24) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=111, y=39): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=79, y=40): has RGB (20, 55, 61) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=80, y=40): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=81, y=40): has RGB (6, 36, 43) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=82, y=40): has RGB (255, 255, 255) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=83, y=40): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=84, y=40): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=85, y=40): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=86, y=40): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=87, y=40): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=88, y=40): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=89, y=40): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=90, y=40): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=91, y=40): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=92, y=40): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=93, y=40): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=95, y=40): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=96, y=40): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=102, y=40): has RGB (130, 33, 24) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=103, y=40): has RGB (130, 33, 24) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=104, y=40): has RGB (130, 33, 24) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=105, y=40): has RGB (130, 33, 24) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=106, y=40): has RGB (130, 33, 24) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=110, y=40): has RGB (130, 33, 24) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=111, y=40): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=81, y=41): has RGB (20, 55, 61) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=82, y=41): has RGB (109, 109, 160) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=83, y=41): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=84, y=41): has RGB (6, 36, 43) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=85, y=41): has RGB (6, 36, 43) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=86, y=41): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=87, y=41): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=88, y=41): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=89, y=41): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=90, y=41): has RGB (0, 0, 0) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=91, y=41): has RGB (6, 36, 43) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=92, y=41): has RGB (20, 55, 61) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=93, y=41): has RGB (30, 75, 81) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=95, y=41): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=96, y=41): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=97, y=41): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=104, y=41): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=107, y=41): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=108, y=41): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=111, y=41): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=114, y=41): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=84, y=42): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=85, y=42): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=86, y=42): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=87, y=42): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=91, y=42): has RGB (20, 55, 61) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=92, y=42): has RGB (30, 75, 81) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=93, y=42): has RGB (30, 75, 81) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=96, y=42): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=97, y=42): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=98, y=42): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=103, y=42): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=107, y=42): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=108, y=42): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=109, y=42): has RGB (130, 33, 24) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=111, y=42): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=112, y=42): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=114, y=42): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=115, y=42): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=97, y=43): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=98, y=43): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=103, y=43): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=107, y=43): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=108, y=43): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=112, y=43): has RGB (6, 36, 43) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=116, y=43): has RGB (6, 36, 43) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=103, y=44): has RGB (130, 33, 24) but should be RGB (191, 74, 53) (the other shiny pixels of the same normal colour (204, 59, 59))
+    - front_shiny sheet pixel (x=106, y=44): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=107, y=44): has RGB (191, 74, 53) but should be RGB (130, 33, 24) (the other shiny pixels of the same normal colour (124, 22, 39))
+    - front_shiny sheet pixel (x=108, y=44): has RGB (130, 33, 24) but should be RGB (0, 0, 0) (the other shiny pixels of the same normal colour (0, 0, 0))
+    - front_shiny sheet pixel (x=91, y=45): has RGB (30, 75, 81) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=95, y=45): has RGB (20, 55, 61) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=96, y=45): has RGB (30, 75, 81) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=95, y=46): has RGB (30, 75, 81) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=91, y=47): has RGB (0, 0, 0) but should be RGB (6, 36, 43) (the other shiny pixels of the same normal colour (31, 41, 81))
+    - front_shiny sheet pixel (x=92, y=47): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=93, y=47): has RGB (30, 75, 81) but should be RGB (20, 55, 61) (the other shiny pixels of the same normal colour (54, 79, 142))
+    - front_shiny sheet pixel (x=95, y=47): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=91, y=48): has RGB (188, 205, 216) but should be RGB (118, 130, 155) (the other shiny pixels of the same normal colour (193, 114, 58))
+    - front_shiny sheet pixel (x=93, y=48): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=92, y=49): has RGB (188, 205, 216) but should be RGB (118, 130, 155) (the other shiny pixels of the same normal colour (193, 114, 58))
+    - front_shiny sheet pixel (x=94, y=49): has RGB (20, 55, 61) but should be RGB (30, 75, 81) (the other shiny pixels of the same normal colour (85, 121, 181))
+    - front_shiny sheet pixel (x=93, y=50): has RGB (188, 205, 216) but should be RGB (118, 130, 155) (the other shiny pixels of the same normal colour (193, 114, 58))
+
+### Skipped sheets
+- none
+
+## Replacements 2: Gen 5
+
+- Mode: applied
+- Imported: 2, failed: 0, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 2
+
+### Failures (not imported)
+- none
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- none
+
+### Skipped sheets
+- none
+
+## Replacements 2: Gen 6
+
+- Mode: applied
+- Imported: 73, failed: 0, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 41
+
+### Failures (not imported)
+- none
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- `0670(B)-1.png` (SPECIES_FLOETTE_BLUE, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png
+- `0670(B)-1.png` (SPECIES_FLOETTE_RED, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png
+- `0670(B)-1.png` (SPECIES_FLOETTE_YELLOW, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png
+- `0670(B)-1.png` (SPECIES_FLOETTE_ORANGE, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png
+- `0670(B)-1.png` (SPECIES_FLOETTE_WHITE, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png
+- `0670(O)-1.png` (SPECIES_FLOETTE_ORANGE, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png
+- `0670(O)-1.png` (SPECIES_FLOETTE_RED, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png
+- `0670(O)-1.png` (SPECIES_FLOETTE_YELLOW, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png
+- `0670(O)-1.png` (SPECIES_FLOETTE_BLUE, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png
+- `0670(O)-1.png` (SPECIES_FLOETTE_WHITE, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png
+- `0670(R)-1.png` (SPECIES_FLOETTE_RED, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png; 2 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0670(R)-1.png` (SPECIES_FLOETTE_YELLOW, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png; 2 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0670(R)-1.png` (SPECIES_FLOETTE_ORANGE, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png; 2 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0670(R)-1.png` (SPECIES_FLOETTE_BLUE, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png; 2 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0670(R)-1.png` (SPECIES_FLOETTE_WHITE, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png; 2 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0670(W)-1.png` (SPECIES_FLOETTE_WHITE, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png
+- `0670(W)-1.png` (SPECIES_FLOETTE_RED, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png
+- `0670(W)-1.png` (SPECIES_FLOETTE_YELLOW, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png
+- `0670(W)-1.png` (SPECIES_FLOETTE_ORANGE, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png
+- `0670(W)-1.png` (SPECIES_FLOETTE_BLUE, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png
+- `0670(Y)-1.png` (SPECIES_FLOETTE_YELLOW, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png; 17 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0670(Y)-1.png` (SPECIES_FLOETTE_RED, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png; 17 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0670(Y)-1.png` (SPECIES_FLOETTE_ORANGE, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png; 17 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0670(Y)-1.png` (SPECIES_FLOETTE_BLUE, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png; 17 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0670(Y)-1.png` (SPECIES_FLOETTE_WHITE, `floette`)
+  - palette grabbed onto the art of 0670(B)-1.png; 17 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0671(B)-1.png` (SPECIES_FLORGES_BLUE, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png
+- `0671(B)-1.png` (SPECIES_FLORGES_RED, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png
+- `0671(B)-1.png` (SPECIES_FLORGES_YELLOW, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png
+- `0671(B)-1.png` (SPECIES_FLORGES_ORANGE, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png
+- `0671(B)-1.png` (SPECIES_FLORGES_WHITE, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png
+- `0671(O)-1.png` (SPECIES_FLORGES_ORANGE, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png; 106 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0671(O)-1.png` (SPECIES_FLORGES_RED, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png; 106 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0671(O)-1.png` (SPECIES_FLORGES_YELLOW, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png; 106 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0671(O)-1.png` (SPECIES_FLORGES_BLUE, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png; 106 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0671(O)-1.png` (SPECIES_FLORGES_WHITE, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png; 106 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0671(R)-1.png` (SPECIES_FLORGES_RED, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png; 10 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0671(R)-1.png` (SPECIES_FLORGES_YELLOW, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png; 10 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0671(R)-1.png` (SPECIES_FLORGES_ORANGE, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png; 10 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0671(R)-1.png` (SPECIES_FLORGES_BLUE, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png; 10 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0671(R)-1.png` (SPECIES_FLORGES_WHITE, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png; 10 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0671(W)-1.png` (SPECIES_FLORGES_WHITE, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png; 168 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0671(W)-1.png` (SPECIES_FLORGES_RED, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png; 168 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0671(W)-1.png` (SPECIES_FLORGES_YELLOW, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png; 168 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0671(W)-1.png` (SPECIES_FLORGES_ORANGE, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png; 168 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0671(W)-1.png` (SPECIES_FLORGES_BLUE, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png; 168 pixel(s) of this form's art flattened to the base art's colour grouping
+- `0671(Y)-1.png` (SPECIES_FLORGES_YELLOW, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png
+- `0671(Y)-1.png` (SPECIES_FLORGES_RED, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png
+- `0671(Y)-1.png` (SPECIES_FLORGES_ORANGE, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png
+- `0671(Y)-1.png` (SPECIES_FLORGES_BLUE, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png
+- `0671(Y)-1.png` (SPECIES_FLORGES_WHITE, `florges`)
+  - palette grabbed onto the art of 0671(B)-1.png
+
+### Skipped sheets
+- none
+
+## Replacements 2: Gen 7
+
+- Mode: applied
+- Imported: 438, failed: 0, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 362
+
+### Failures (not imported)
+- none
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- `0773-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Bug)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dark)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Dragon)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Electric)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fairy)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fight)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fire)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Fly)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ghost)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Grass)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ground)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Ice)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Poison)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Psychic)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Rock)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Steel)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_WATER, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_NORMAL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_FIGHTING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_FLYING, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_POISON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_GROUND, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_ROCK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_BUG, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_GHOST, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_STEEL, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_FIRE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_GRASS, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_ELECTRIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_PSYCHIC, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_ICE, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_DRAGON, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_DARK, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0773(Water)-1.png` (SPECIES_SILVALLY_FAIRY, `silvally`)
+  - palette grabbed onto the art of 0773-1.png
+- `0774(B)-1.png` (SPECIES_MINIOR_CORE_BLUE, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(B)-1.png` (SPECIES_MINIOR_CORE_RED, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(B)-1.png` (SPECIES_MINIOR_CORE_ORANGE, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(B)-1.png` (SPECIES_MINIOR_CORE_YELLOW, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(B)-1.png` (SPECIES_MINIOR_CORE_GREEN, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(B)-1.png` (SPECIES_MINIOR_CORE_INDIGO, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(B)-1.png` (SPECIES_MINIOR_CORE_VIOLET, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(G)-1.png` (SPECIES_MINIOR_CORE_GREEN, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(G)-1.png` (SPECIES_MINIOR_CORE_RED, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(G)-1.png` (SPECIES_MINIOR_CORE_ORANGE, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(G)-1.png` (SPECIES_MINIOR_CORE_YELLOW, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(G)-1.png` (SPECIES_MINIOR_CORE_BLUE, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(G)-1.png` (SPECIES_MINIOR_CORE_INDIGO, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(G)-1.png` (SPECIES_MINIOR_CORE_VIOLET, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(I)-1.png` (SPECIES_MINIOR_CORE_INDIGO, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(I)-1.png` (SPECIES_MINIOR_CORE_RED, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(I)-1.png` (SPECIES_MINIOR_CORE_ORANGE, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(I)-1.png` (SPECIES_MINIOR_CORE_YELLOW, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(I)-1.png` (SPECIES_MINIOR_CORE_GREEN, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(I)-1.png` (SPECIES_MINIOR_CORE_BLUE, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(I)-1.png` (SPECIES_MINIOR_CORE_VIOLET, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(O)-1.png` (SPECIES_MINIOR_CORE_ORANGE, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(O)-1.png` (SPECIES_MINIOR_CORE_RED, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(O)-1.png` (SPECIES_MINIOR_CORE_YELLOW, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(O)-1.png` (SPECIES_MINIOR_CORE_GREEN, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(O)-1.png` (SPECIES_MINIOR_CORE_BLUE, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(O)-1.png` (SPECIES_MINIOR_CORE_INDIGO, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(O)-1.png` (SPECIES_MINIOR_CORE_VIOLET, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(R)-1.png` (SPECIES_MINIOR_CORE_RED, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(R)-1.png` (SPECIES_MINIOR_CORE_ORANGE, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(R)-1.png` (SPECIES_MINIOR_CORE_YELLOW, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(R)-1.png` (SPECIES_MINIOR_CORE_GREEN, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(R)-1.png` (SPECIES_MINIOR_CORE_BLUE, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(R)-1.png` (SPECIES_MINIOR_CORE_INDIGO, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(R)-1.png` (SPECIES_MINIOR_CORE_VIOLET, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(V)-1.png` (SPECIES_MINIOR_CORE_VIOLET, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(V)-1.png` (SPECIES_MINIOR_CORE_RED, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(V)-1.png` (SPECIES_MINIOR_CORE_ORANGE, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(V)-1.png` (SPECIES_MINIOR_CORE_YELLOW, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(V)-1.png` (SPECIES_MINIOR_CORE_GREEN, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(V)-1.png` (SPECIES_MINIOR_CORE_BLUE, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(V)-1.png` (SPECIES_MINIOR_CORE_INDIGO, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(Y)-1.png` (SPECIES_MINIOR_CORE_YELLOW, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(Y)-1.png` (SPECIES_MINIOR_CORE_RED, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(Y)-1.png` (SPECIES_MINIOR_CORE_ORANGE, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(Y)-1.png` (SPECIES_MINIOR_CORE_GREEN, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(Y)-1.png` (SPECIES_MINIOR_CORE_BLUE, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(Y)-1.png` (SPECIES_MINIOR_CORE_INDIGO, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+- `0774(Y)-1.png` (SPECIES_MINIOR_CORE_VIOLET, `minior/core`)
+  - palette grabbed onto the art of 0774(B)-1.png
+
+### Skipped sheets
+- none
+
+## Replacements 2: Gen 8
+
+- Mode: applied
+- Imported: 67, failed: 0, skipped: 2
+- Sheets whose colours were snapped to GBA 15-bit (informational): 52
+
+### Failures (not imported)
+- none
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- none
+
+### Skipped sheets
+- `0854(Phony)-1.png`: skipped by --skip-sheet
+- `0855(Phony)-1.png`: skipped by --skip-sheet
+
+## Replacements 2: Gen 9
+
+- Mode: applied
+- Imported: 31, failed: 0, skipped: 0
+- Sheets whose colours were snapped to GBA 15-bit (informational): 27
+
+### Failures (not imported)
+- none
+
+### Warnings (imported, but the result differs slightly from the sheet)
+- none
+
+### Skipped sheets
+- none
+
 ## Replacements: Gen 1
 
 - Mode: applied
