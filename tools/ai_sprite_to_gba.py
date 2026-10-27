@@ -112,6 +112,23 @@ def load_subject(path, args):
 
 def fit_to_tile(subject, args, warnings, label):
     """-> list of 64*64 items: None (transparent), (r,g,b) or OL."""
+    if args.whole_tile:
+        # The picture already IS the sprite tile (e.g. an inpainted 512x512 export of an existing sprite):
+        # shrink the whole image 1:1 to 64x64 so every original pixel stays where it was.
+        if subject.width != subject.height:
+            warnings.append("%s: --whole-tile expects a square picture, got %dx%d"
+                            % (label, subject.width, subject.height))
+        resample = {"box": Image.Resampling.BOX, "lanczos": Image.Resampling.LANCZOS,
+                    "nearest": Image.Resampling.NEAREST}[args.resample]
+        small = subject.resize((TILE, TILE), resample)
+        src = small.load()
+        px = [None] * (TILE * TILE)
+        for y in range(TILE):
+            for x in range(TILE):
+                r, g, b, a = src[x, y]
+                if a >= args.alpha_threshold:
+                    px[y * TILE + x] = (r, g, b)
+        return px
     hard = subject.getchannel("A").point(lambda v: 255 if v >= args.alpha_threshold else 0)
     bbox = hard.getbbox()
     if not bbox:
@@ -464,6 +481,10 @@ def main():
     g.add_argument("--erode", type=int, default=0, help="shrink the subject mask N px at source size to kill halos")
 
     g = ap.add_argument_group("sprite")
+    g.add_argument("--whole-tile", action="store_true",
+                   help="the picture is already a full sprite tile (e.g. an inpainted 512x512 export of an existing "
+                        "sprite): scale the whole image 1:1 to 64x64 with no cropping or re-fitting, so unchanged "
+                        "pixels stay exactly where they were")
     g.add_argument("--fit", type=int, default=60, help="max sprite size inside the 64x64 tile (default 60)")
     g.add_argument("--align", choices=["bottom", "center"], default="bottom")
     g.add_argument("--resample", choices=["box", "lanczos", "nearest"], default="box")

@@ -73,6 +73,7 @@ Route119_EventScript_BattleMay::
 	case 0, Route119_EventScript_BattleMayTreecko
 	case 1, Route119_EventScript_BattleMayTorchic
 	case 2, Route119_EventScript_BattleMayMudkip
+	goto Route119_EventScript_BattleMayTreecko
 	end
 
 Route119_EventScript_BattleMayTreecko::
@@ -103,6 +104,7 @@ Route119_EventScript_BattleBrendan::
 	case 0, Route119_EventScript_BattleBrendanTreecko
 	case 1, Route119_EventScript_BattleBrendanTorchic
 	case 2, Route119_EventScript_BattleBrendanMudkip
+	goto Route119_EventScript_BattleBrendanTreecko
 	end
 
 Route119_EventScript_BattleBrendanTreecko::

@@ -39,6 +39,7 @@ Route103_EventScript_RivalMay::
 	case 0, Route103_EventScript_StartMayBattleTreecko
 	case 1, Route103_EventScript_StartMayBattleTorchic
 	case 2, Route103_EventScript_StartMayBattleMudkip
+	goto Route103_EventScript_StartMayBattleTreecko
 	end
 
 Route103_EventScript_RivalBrendan::
@@ -56,6 +57,7 @@ Route103_EventScript_RivalBrendan::
 	case 0, Route103_EventScript_StartBrendanBattleTreecko
 	case 1, Route103_EventScript_StartBrendanBattleTorchic
 	case 2, Route103_EventScript_StartBrendanBattleMudkip
+	goto Route103_EventScript_StartBrendanBattleTreecko
 	end
 
 Route103_EventScript_StartMayBattleTreecko::

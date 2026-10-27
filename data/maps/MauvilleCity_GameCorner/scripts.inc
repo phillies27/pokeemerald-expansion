@@ -386,6 +386,7 @@ MauvilleCity_GameCorner_EventScript_Girl::
 	case 0, MauvilleCity_GameCorner_EventScript_GiveTreeckoDoll
 	case 1, MauvilleCity_GameCorner_EventScript_GiveTorchicDoll
 	case 2, MauvilleCity_GameCorner_EventScript_GiveMudkipDoll
+	goto MauvilleCity_GameCorner_EventScript_GiveTreeckoDoll
 	end
 
 MauvilleCity_GameCorner_EventScript_GiveTreeckoDoll::

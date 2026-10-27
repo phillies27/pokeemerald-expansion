@@ -16,12 +16,11 @@ A sheet exists but has not been applied yet (import it instead of generating art
 ### Gen 7 (#722-809): 1
 - [ ] #0766 Passimian `SPECIES_PASSIMIAN` - sheet `7. Generation VII/0766A.png`
 
-## Needs new art: 164
+## Needs new art: 163
 
 No Moemon sheet found - draw or generate these.
 
-### Gen 1 (#1-151): 25
-- [ ] #0003 Venusaur (Gmax) `SPECIES_VENUSAUR_GMAX`
+### Gen 1 (#1-151): 24
 - [ ] #0006 Charizard (Gmax) `SPECIES_CHARIZARD_GMAX`
 - [ ] #0009 Blastoise (Gmax) `SPECIES_BLASTOISE_GMAX`
 - [ ] #0025 Pikachu (Cosplay) `SPECIES_PIKACHU_COSPLAY`

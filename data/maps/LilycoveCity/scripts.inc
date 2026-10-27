@@ -242,6 +242,7 @@ LilycoveCity_EventScript_May::
 	case 0, LilycoveCity_EventScript_BattleMayTreecko
 	case 1, LilycoveCity_EventScript_BattleMayTorchic
 	case 2, LilycoveCity_EventScript_BattleMayMudkip
+	goto LilycoveCity_EventScript_BattleMayTreecko
 	end
 
 LilycoveCity_EventScript_MayAskToBattleAgain::
@@ -270,6 +271,7 @@ LilycoveCity_EventScript_Brendan::
 	case 0, LilycoveCity_EventScript_BattleBrendanTreecko
 	case 1, LilycoveCity_EventScript_BattleBrendanTorchic
 	case 2, LilycoveCity_EventScript_BattleBrendanMudkip
+	goto LilycoveCity_EventScript_BattleBrendanTreecko
 	end
 
 LilycoveCity_EventScript_BrendanAskToBattleAgain::

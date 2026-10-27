@@ -403,6 +403,7 @@ Route110_EventScript_MayBattle::
 	case 0, Route110_EventScript_MayBattleTreecko
 	case 1, Route110_EventScript_MayBattleTorchic
 	case 2, Route110_EventScript_MayBattleMudkip
+	goto Route110_EventScript_MayBattleTreecko
 	end
 
 Route110_EventScript_MayBattleTreecko::
@@ -433,6 +434,7 @@ Route110_EventScript_BrendanBattle::
 	case 0, Route110_EventScript_BrendanBattleTreecko
 	case 1, Route110_EventScript_BrendanBattleTorchic
 	case 2, Route110_EventScript_BrendanBattleMudkip
+	goto Route110_EventScript_BrendanBattleTreecko
 	end
 
 Route110_EventScript_BrendanBattleTreecko::
