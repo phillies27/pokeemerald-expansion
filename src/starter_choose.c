@@ -42,6 +42,100 @@ static const u32 sStarterMenu_Tilemap[] = INCGFX_U32("graphics/starter_choose/me
 static const u16 sCursor_Pal[] = INCGFX_U16("graphics/starter_choose/cursor.png", ".gbapal");
 static const u32 sCursor_Gfx[] = INCGFX_U32("graphics/starter_choose/cursor.png", ".4bpp.smol");
 
+static const u32 sTypeBgGfx_None[]     = INCGFX_U32("graphics/starter_choose/type_bg/none.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Normal[]   = INCGFX_U32("graphics/starter_choose/type_bg/normal.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Fight[]    = INCGFX_U32("graphics/starter_choose/type_bg/fight.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Flying[]   = INCGFX_U32("graphics/starter_choose/type_bg/flying.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Poison[]   = INCGFX_U32("graphics/starter_choose/type_bg/poison.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Ground[]   = INCGFX_U32("graphics/starter_choose/type_bg/ground.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Rock[]     = INCGFX_U32("graphics/starter_choose/type_bg/rock.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Bug[]      = INCGFX_U32("graphics/starter_choose/type_bg/bug.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Ghost[]    = INCGFX_U32("graphics/starter_choose/type_bg/ghost.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Steel[]    = INCGFX_U32("graphics/starter_choose/type_bg/steel.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Mystery[]  = INCGFX_U32("graphics/starter_choose/type_bg/mystery.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Fire[]     = INCGFX_U32("graphics/starter_choose/type_bg/fire.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Water[]    = INCGFX_U32("graphics/starter_choose/type_bg/water.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Grass[]    = INCGFX_U32("graphics/starter_choose/type_bg/grass.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Electric[] = INCGFX_U32("graphics/starter_choose/type_bg/electric.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Psychic[]  = INCGFX_U32("graphics/starter_choose/type_bg/psychic.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Ice[]      = INCGFX_U32("graphics/starter_choose/type_bg/ice.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Dragon[]   = INCGFX_U32("graphics/starter_choose/type_bg/dragon.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Dark[]     = INCGFX_U32("graphics/starter_choose/type_bg/dark.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Fairy[]    = INCGFX_U32("graphics/starter_choose/type_bg/fairy.png", ".4bpp.smol");
+static const u32 sTypeBgGfx_Stellar[]  = INCGFX_U32("graphics/starter_choose/type_bg/stellar.png", ".4bpp.smol");
+
+static const u16 sTypeBgPal_None[]     = INCGFX_U16("graphics/starter_choose/type_bg/none.png", ".gbapal");
+static const u16 sTypeBgPal_Normal[]   = INCGFX_U16("graphics/starter_choose/type_bg/normal.png", ".gbapal");
+static const u16 sTypeBgPal_Fight[]    = INCGFX_U16("graphics/starter_choose/type_bg/fight.png", ".gbapal");
+static const u16 sTypeBgPal_Flying[]   = INCGFX_U16("graphics/starter_choose/type_bg/flying.png", ".gbapal");
+static const u16 sTypeBgPal_Poison[]   = INCGFX_U16("graphics/starter_choose/type_bg/poison.png", ".gbapal");
+static const u16 sTypeBgPal_Ground[]   = INCGFX_U16("graphics/starter_choose/type_bg/ground.png", ".gbapal");
+static const u16 sTypeBgPal_Rock[]     = INCGFX_U16("graphics/starter_choose/type_bg/rock.png", ".gbapal");
+static const u16 sTypeBgPal_Bug[]      = INCGFX_U16("graphics/starter_choose/type_bg/bug.png", ".gbapal");
+static const u16 sTypeBgPal_Ghost[]    = INCGFX_U16("graphics/starter_choose/type_bg/ghost.png", ".gbapal");
+static const u16 sTypeBgPal_Steel[]    = INCGFX_U16("graphics/starter_choose/type_bg/steel.png", ".gbapal");
+static const u16 sTypeBgPal_Mystery[]  = INCGFX_U16("graphics/starter_choose/type_bg/mystery.png", ".gbapal");
+static const u16 sTypeBgPal_Fire[]     = INCGFX_U16("graphics/starter_choose/type_bg/fire.png", ".gbapal");
+static const u16 sTypeBgPal_Water[]    = INCGFX_U16("graphics/starter_choose/type_bg/water.png", ".gbapal");
+static const u16 sTypeBgPal_Grass[]    = INCGFX_U16("graphics/starter_choose/type_bg/grass.png", ".gbapal");
+static const u16 sTypeBgPal_Electric[] = INCGFX_U16("graphics/starter_choose/type_bg/electric.png", ".gbapal");
+static const u16 sTypeBgPal_Psychic[]  = INCGFX_U16("graphics/starter_choose/type_bg/psychic.png", ".gbapal");
+static const u16 sTypeBgPal_Ice[]      = INCGFX_U16("graphics/starter_choose/type_bg/ice.png", ".gbapal");
+static const u16 sTypeBgPal_Dragon[]   = INCGFX_U16("graphics/starter_choose/type_bg/dragon.png", ".gbapal");
+static const u16 sTypeBgPal_Dark[]     = INCGFX_U16("graphics/starter_choose/type_bg/dark.png", ".gbapal");
+static const u16 sTypeBgPal_Fairy[]    = INCGFX_U16("graphics/starter_choose/type_bg/fairy.png", ".gbapal");
+static const u16 sTypeBgPal_Stellar[]  = INCGFX_U16("graphics/starter_choose/type_bg/stellar.png", ".gbapal");
+
+static const u32 *const sTypeBgGfx[NUMBER_OF_MON_TYPES] =
+{
+    [TYPE_NONE]     = sTypeBgGfx_None,
+    [TYPE_NORMAL]   = sTypeBgGfx_Normal,
+    [TYPE_FIGHTING] = sTypeBgGfx_Fight,
+    [TYPE_FLYING]   = sTypeBgGfx_Flying,
+    [TYPE_POISON]   = sTypeBgGfx_Poison,
+    [TYPE_GROUND]   = sTypeBgGfx_Ground,
+    [TYPE_ROCK]     = sTypeBgGfx_Rock,
+    [TYPE_BUG]      = sTypeBgGfx_Bug,
+    [TYPE_GHOST]    = sTypeBgGfx_Ghost,
+    [TYPE_STEEL]    = sTypeBgGfx_Steel,
+    [TYPE_MYSTERY]  = sTypeBgGfx_Mystery,
+    [TYPE_FIRE]     = sTypeBgGfx_Fire,
+    [TYPE_WATER]    = sTypeBgGfx_Water,
+    [TYPE_GRASS]    = sTypeBgGfx_Grass,
+    [TYPE_ELECTRIC] = sTypeBgGfx_Electric,
+    [TYPE_PSYCHIC]  = sTypeBgGfx_Psychic,
+    [TYPE_ICE]      = sTypeBgGfx_Ice,
+    [TYPE_DRAGON]   = sTypeBgGfx_Dragon,
+    [TYPE_DARK]     = sTypeBgGfx_Dark,
+    [TYPE_FAIRY]    = sTypeBgGfx_Fairy,
+    [TYPE_STELLAR]  = sTypeBgGfx_Stellar,
+};
+
+static const u16 *const sTypeBgPal[NUMBER_OF_MON_TYPES] =
+{
+    [TYPE_NONE]     = sTypeBgPal_None,
+    [TYPE_NORMAL]   = sTypeBgPal_Normal,
+    [TYPE_FIGHTING] = sTypeBgPal_Fight,
+    [TYPE_FLYING]   = sTypeBgPal_Flying,
+    [TYPE_POISON]   = sTypeBgPal_Poison,
+    [TYPE_GROUND]   = sTypeBgPal_Ground,
+    [TYPE_ROCK]     = sTypeBgPal_Rock,
+    [TYPE_BUG]      = sTypeBgPal_Bug,
+    [TYPE_GHOST]    = sTypeBgPal_Ghost,
+    [TYPE_STEEL]    = sTypeBgPal_Steel,
+    [TYPE_MYSTERY]  = sTypeBgPal_Mystery,
+    [TYPE_FIRE]     = sTypeBgPal_Fire,
+    [TYPE_WATER]    = sTypeBgPal_Water,
+    [TYPE_GRASS]    = sTypeBgPal_Grass,
+    [TYPE_ELECTRIC] = sTypeBgPal_Electric,
+    [TYPE_PSYCHIC]  = sTypeBgPal_Psychic,
+    [TYPE_ICE]      = sTypeBgPal_Ice,
+    [TYPE_DRAGON]   = sTypeBgPal_Dragon,
+    [TYPE_DARK]     = sTypeBgPal_Dark,
+    [TYPE_FAIRY]    = sTypeBgPal_Fairy,
+    [TYPE_STELLAR]  = sTypeBgPal_Stellar,
+};
+
 #define TAG_STARTER_CURSOR 0x3100
 #define WIN_HEADER 0
 #define WIN_FOOTER 1
@@ -145,31 +239,8 @@ static const u8 sGridCoords[STARTER_SLOTS_PER_REGION][2] =
 #define TYPE_ICON_Y 128
 #define TYPE_ICON_X0 168
 #define TYPE_ICON_X1 204
-
-static const u16 sTypeBgColors[NUMBER_OF_MON_TYPES][2] =
-{
-    [TYPE_NONE]     = {RGB2GBA(200, 200, 200), RGB2GBA(176, 176, 176)},
-    [TYPE_NORMAL]   = {RGB2GBA(216, 212, 192), RGB2GBA(192, 188, 168)},
-    [TYPE_FIGHTING] = {RGB2GBA(216, 152, 136), RGB2GBA(192, 128, 112)},
-    [TYPE_FLYING]   = {RGB2GBA(176, 200, 232), RGB2GBA(152, 176, 208)},
-    [TYPE_POISON]   = {RGB2GBA(192, 152, 216), RGB2GBA(168, 128, 192)},
-    [TYPE_GROUND]   = {RGB2GBA(220, 196, 144), RGB2GBA(196, 172, 120)},
-    [TYPE_ROCK]     = {RGB2GBA(196, 180, 128), RGB2GBA(172, 156, 104)},
-    [TYPE_BUG]      = {RGB2GBA(188, 208, 112), RGB2GBA(164, 184, 88)},
-    [TYPE_GHOST]    = {RGB2GBA(168, 144, 200), RGB2GBA(144, 120, 176)},
-    [TYPE_STEEL]    = {RGB2GBA(192, 200, 208), RGB2GBA(168, 176, 184)},
-    [TYPE_MYSTERY]  = {RGB2GBA(200, 200, 200), RGB2GBA(176, 176, 176)},
-    [TYPE_FIRE]     = {RGB2GBA(232, 168, 112), RGB2GBA(208, 144, 88)},
-    [TYPE_WATER]    = {RGB2GBA(144, 184, 232), RGB2GBA(120, 160, 208)},
-    [TYPE_GRASS]    = {RGB2GBA(168, 212, 140), RGB2GBA(144, 188, 116)},
-    [TYPE_ELECTRIC] = {RGB2GBA(236, 220, 112), RGB2GBA(212, 196, 88)},
-    [TYPE_PSYCHIC]  = {RGB2GBA(232, 152, 176), RGB2GBA(208, 128, 152)},
-    [TYPE_ICE]      = {RGB2GBA(168, 224, 224), RGB2GBA(144, 200, 200)},
-    [TYPE_DRAGON]   = {RGB2GBA(136, 144, 216), RGB2GBA(112, 120, 192)},
-    [TYPE_DARK]     = {RGB2GBA(152, 136, 128), RGB2GBA(128, 112, 104)},
-    [TYPE_FAIRY]    = {RGB2GBA(232, 176, 200), RGB2GBA(208, 152, 176)},
-    [TYPE_STELLAR]  = {RGB2GBA(200, 208, 232), RGB2GBA(176, 184, 208)},
-};
+#define TYPE_BG_PALETTE 1
+#define TYPE_BG_SCROLL  0x35 // 0.5px per frame, down-left
 
 static const struct BgTemplate sBgTemplates[] =
 {
@@ -189,6 +260,15 @@ static const struct BgTemplate sBgTemplates[] =
         .screenSize = 0,
         .paletteMode = 0,
         .priority = 2,
+        .baseTile = 0
+    },
+    {
+        .bg = 3,
+        .charBaseIndex = 1,
+        .mapBaseIndex = 7,
+        .screenSize = 0,
+        .paletteMode = 0,
+        .priority = 3,
         .baseTile = 0
     },
 };
@@ -277,6 +357,9 @@ static const struct SpriteTemplate sSpriteTemplate_Cursor =
 static EWRAM_DATA u16 sStarterChoices[STARTER_CHOICE_COUNT] = {0};
 static EWRAM_DATA bool8 sStarterChoicesInitialized = FALSE;
 static EWRAM_DATA u8 sIconSprites[STARTER_SLOTS_PER_REGION] = {0};
+static EWRAM_DATA u16 sTypeBgTilemap[32 * 32] = {0};
+static EWRAM_DATA u8 sLoadedTypeBg;
+static EWRAM_DATA bool8 sTypeBgLoaded;
 
 static void CB2_StarterChoose(void);
 static void VblankCB_StarterChoose(void);
@@ -285,12 +368,15 @@ static void InitStarterChooseGfx(void);
 static void CreateStarterChooseSprites(u8 taskId);
 static void RefreshRegionIcons(u8 taskId);
 static void RefreshSelection(u8 taskId);
+static void InitTypeBgTilemap(void);
 static void SetTypeBackground(enum Type type);
 static void PrintHeader(u8 region);
 static void PrintFooter(bool32 confirm);
 static void PrintSpeciesName(enum Species species);
 static void UpdateTypeIcons(u8 taskId, enum Species species);
 static void DestroyIconSprites(void);
+static void DestroyPicSprite(u8 taskId);
+static void SpriteCB_WaitThenPlayFrontAnim(struct Sprite *sprite);
 static void ExitStarterChoose(u8 taskId, u16 choice);
 static u16 GetChoiceIndex(u8 region, u8 cursor);
 static enum Species GetChoiceSpecies(u8 region, u8 cursor);
@@ -340,6 +426,8 @@ void CB2_ChooseStarter(void)
     ChangeBgY(0, 0, BG_COORD_SET);
     ChangeBgX(2, 0, BG_COORD_SET);
     ChangeBgY(2, 0, BG_COORD_SET);
+    ChangeBgX(3, 0, BG_COORD_SET);
+    ChangeBgY(3, 0, BG_COORD_SET);
 
     DmaFill16(3, 0, VRAM, VRAM_SIZE);
     DmaFill32(3, 0, OAM, OAM_SIZE);
@@ -370,6 +458,7 @@ void CB2_ChooseStarter(void)
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
     ShowBg(0);
     ShowBg(2);
+    ShowBg(3);
 
     if (!sStarterChoicesInitialized)
         InitStarterChoices();
@@ -388,6 +477,8 @@ void CB2_ChooseStarter(void)
 
 static void CB2_StarterChoose(void)
 {
+    ChangeBgX(3, TYPE_BG_SCROLL, BG_COORD_ADD);
+    ChangeBgY(3, TYPE_BG_SCROLL, BG_COORD_SUB);
     RunTasks();
     AnimateSprites();
     BuildOamBuffer();
@@ -408,6 +499,9 @@ static void InitStarterChooseGfx(void)
     DecompressDataWithHeaderVram(sStarterMenu_Tilemap, (void *)(BG_SCREEN_ADDR(6)));
     LoadPalette(sStarterMenu_Pal, BG_PLTT_ID(0), sizeof(sStarterMenu_Pal));
     LoadPalette(GetOverworldTextboxPalettePtr(), BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    SetBgTilemapBuffer(3, sTypeBgTilemap);
+    InitTypeBgTilemap();
+    sTypeBgLoaded = FALSE;
     LoadMonIconPalettes();
     LoadCompressedSpriteSheet(&sCursorSpriteSheet);
     LoadSpritePalette(&sCursorSpritePalette);
@@ -489,26 +583,44 @@ static void RefreshRegionIcons(u8 taskId)
         if (species == SPECIES_NONE)
             continue;
         LoadMonIconPalette(species);
-        sIconSprites[i] = CreateMonIcon(species, SpriteCallbackDummy, sGridCoords[i][0], sGridCoords[i][1], 2, 0);
+        sIconSprites[i] = CreateMonIcon(species, SpriteCB_MonIcon, sGridCoords[i][0], sGridCoords[i][1], 2, 0);
         if (sIconSprites[i] < MAX_SPRITES)
+        {
             gSprites[sIconSprites[i]].oam.priority = 1;
+            SetPartyHPBarSprite(&gSprites[sIconSprites[i]], 0);
+        }
         else
             sIconSprites[i] = SPRITE_NONE;
     }
 }
 
+static void InitTypeBgTilemap(void)
+{
+    u32 x, y;
+    u16 tile;
+
+    for (y = 0; y < 32; y++)
+    {
+        for (x = 0; x < 32; x++)
+        {
+            tile = (x % 4) + (y % 4) * 4;
+            sTypeBgTilemap[y * 32 + x] = tile | (TYPE_BG_PALETTE << 12);
+        }
+    }
+    CopyBgTilemapBufferToVram(3);
+}
+
 static void SetTypeBackground(enum Type type)
 {
-    u16 fill, watermark;
-
     if (type >= NUMBER_OF_MON_TYPES)
         type = TYPE_NORMAL;
-    fill = sTypeBgColors[type][0];
-    watermark = sTypeBgColors[type][1];
-    gPlttBufferUnfaded[BG_PLTT_ID(0) + 1] = fill;
-    gPlttBufferFaded[BG_PLTT_ID(0) + 1] = fill;
-    gPlttBufferUnfaded[BG_PLTT_ID(0) + 2] = watermark;
-    gPlttBufferFaded[BG_PLTT_ID(0) + 2] = watermark;
+    if (sTypeBgLoaded && type == sLoadedTypeBg)
+        return;
+
+    DecompressDataWithHeaderVram(sTypeBgGfx[type], (void *)BG_CHAR_ADDR(1));
+    LoadPalette(sTypeBgPal[type], BG_PLTT_ID(TYPE_BG_PALETTE), PLTT_SIZE_4BPP);
+    sLoadedTypeBg = type;
+    sTypeBgLoaded = TRUE;
 }
 
 static void PrintHeader(u8 region)
@@ -589,15 +701,14 @@ static void RefreshSelection(u8 taskId)
     gSprites[cursorSprite].x = sGridCoords[cursor][0];
     gSprites[cursorSprite].y = sGridCoords[cursor][1];
 
-    if (picSprite != SPRITE_NONE)
-    {
-        FreeAndDestroyMonPicSprite(picSprite);
-        gTasks[taskId].tPicSprite = SPRITE_NONE;
-    }
+    DestroyPicSprite(taskId);
 
     // 0 is female and loads anim_frontf.png. 0xFF keeps the base front sheet (anim_front.png).
     picSprite = CreateMonPicSprite(species, FALSE, 0xFF, TRUE, PIC_X, PIC_Y, 10, TAG_NONE);
     gSprites[picSprite].oam.priority = 1;
+    gSprites[picSprite].data[0] = species;
+    gSprites[picSprite].data[1] = TRUE; // sDontFlip: battle-style, no extra affine flip
+    gSprites[picSprite].callback = SpriteCB_WaitThenPlayFrontAnim;
     gTasks[taskId].tPicSprite = picSprite;
 
     PrintHeader(region);
@@ -607,11 +718,29 @@ static void RefreshSelection(u8 taskId)
     SetTypeBackground(GetSpeciesType(species, 0));
 }
 
+static void DestroyPicSprite(u8 taskId)
+{
+    u8 picSprite = gTasks[taskId].tPicSprite;
+
+    if (picSprite == SPRITE_NONE)
+        return;
+
+    StopPokemonAnimationDelayTask();
+    FreeSpriteOamMatrix(&gSprites[picSprite]);
+    FreeAndDestroyMonPicSprite(picSprite);
+    gTasks[taskId].tPicSprite = SPRITE_NONE;
+}
+
+static void SpriteCB_WaitThenPlayFrontAnim(struct Sprite *sprite)
+{
+    if (!gPaletteFade.active)
+        PokemonSummaryDoMonAnimation(sprite, sprite->data[0], FALSE);
+}
+
 static void ExitStarterChoose(u8 taskId, u16 choice)
 {
     DestroyIconSprites();
-    if (gTasks[taskId].tPicSprite != SPRITE_NONE)
-        FreeAndDestroyMonPicSprite(gTasks[taskId].tPicSprite);
+    DestroyPicSprite(taskId);
     if (gTasks[taskId].tCursorSprite != SPRITE_NONE)
         DestroySprite(&gSprites[gTasks[taskId].tCursorSprite]);
     if (gTasks[taskId].tType0 != SPRITE_NONE)

@@ -47,7 +47,8 @@ def pal_index(rgb):
 
 
 def new_canvas():
-    img = Image.new("P", (W, H), 1)
+    # Index 0 is transparent so BG3's scrolling type pattern shows through.
+    img = Image.new("P", (W, H), 0)
     img.putpalette([c for rgb in PALETTE for c in rgb] + [0] * (768 - 16 * 3))
     return img
 
@@ -146,12 +147,6 @@ def round_rect(px, box, color, radius=4, fill=None):
 def draw_menu():
     img = new_canvas()
     px = img.load()
-
-    fill_rect(px, (0, 0, W, H), 1)
-    draw_hex_watermark(px)
-    draw_pokeball_mark(px, 210, 40, 16)
-    draw_pokeball_mark(px, 24, 132, 12)
-    draw_pokeball_mark(px, 200, 128, 10)
 
     fill_rect(px, (0, 0, W, HEADER_H), 3)
     fill_rect(px, (0, FOOTER_Y, W, H), 3)
