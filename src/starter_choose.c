@@ -41,6 +41,8 @@ static const u32 sStarterMenu_Gfx[] = INCGFX_U32("graphics/starter_choose/menu_t
 static const u32 sStarterMenu_Tilemap[] = INCGFX_U32("graphics/starter_choose/menu.bin", ".smolTM");
 static const u16 sCursor_Pal[] = INCGFX_U16("graphics/starter_choose/cursor.png", ".gbapal");
 static const u32 sCursor_Gfx[] = INCGFX_U32("graphics/starter_choose/cursor.png", ".4bpp.smol");
+static const u16 sPokeball_Pal[] = INCGFX_U16("graphics/starter_choose/pokeball.png", ".gbapal");
+static const u32 sPokeball_Gfx[] = INCGFX_U32("graphics/starter_choose/pokeball.png", ".4bpp.smol");
 
 static const u32 sTypeBgGfx_None[]     = INCGFX_U32("graphics/starter_choose/type_bg/none.png", ".4bpp.smol");
 static const u32 sTypeBgGfx_Normal[]   = INCGFX_U32("graphics/starter_choose/type_bg/normal.png", ".4bpp.smol");
@@ -137,6 +139,7 @@ static const u16 *const sTypeBgPal[NUMBER_OF_MON_TYPES] =
 };
 
 #define TAG_STARTER_CURSOR 0x3100
+#define TAG_STARTER_BALL   0x3101
 #define WIN_HEADER 0
 #define WIN_FOOTER 1
 #define WIN_NAME   2
@@ -149,6 +152,7 @@ static const u16 *const sTypeBgPal[NUMBER_OF_MON_TYPES] =
 #define tCursorSprite  data[4]
 #define tType0         data[5]
 #define tType1         data[6]
+#define tBallSprite    data[7]
 
 // Default 10x9 list cloned from Quetzal's starter menu.
 // Shuffle this RAM copy later for a randomizer; persist it in the save block when that lands.
@@ -226,21 +230,32 @@ static const u8 sText_FooterConfirm[] = _("{A_BUTTON} CONFIRM     {B_BUTTON} BAC
 static const u8 sHeaderTextColors[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
 static const u8 sNameTextColors[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
 
-// Must match tools/gen_starter_menu_gfx.py
+// Cell centers for the 3x3 in menu.bin (icons + cursor).
 static const u8 sGridCoords[STARTER_SLOTS_PER_REGION][2] =
 {
-    {32, 48}, {72, 48}, {112, 48},
-    {32, 84}, {72, 84}, {112, 84},
-    {32, 120}, {72, 120}, {112, 120},
+    {36, 44}, {72, 44}, {108, 44},
+    {36, 80}, {72, 80}, {108, 80},
+    {36, 116}, {72, 116}, {108, 116},
 };
 
+// mGBA sprite Position is OAM top-left. pokeemerald sprite x/y is the center.
+// Front 64x64 OAM (152, 28) → center (184, 60).
 #define PIC_X 184
-#define PIC_Y 64
-#define TYPE_ICON_Y 128
-#define TYPE_ICON_X0 168
-#define TYPE_ICON_X1 204
+#define PIC_Y 60
+// Type icons are 32x16. One: OAM (168, 116). Two: (150, 116) and (186, 116).
+#define TYPE_ICON_Y 124
+#define TYPE_ICON_X_SINGLE 184
+#define TYPE_ICON_X0 166
+#define TYPE_ICON_X1 202
+// Header pokéball is 16x16. Sit in the left cap of the header bar.
+#define POKEBALL_X 11
+#define POKEBALL_Y 10
 #define TYPE_BG_PALETTE 1
 #define TYPE_BG_SCROLL  0x35 // 0.5px per frame, down-left
+// Sprite x/y is the 64x64 center (OAM is x-32, y-32). Offset keeps the
+// 38x38 cursor art on the cell (slot 0 OAM top-left stays at 17, 25).
+#define CURSOR_OFFSET_X 13
+#define CURSOR_OFFSET_Y 13
 
 static const struct BgTemplate sBgTemplates[] =
 {
@@ -287,20 +302,20 @@ static const struct WindowTemplate sWindowTemplates[] =
     { // footer
         .bg = 0,
         .tilemapLeft = 1,
-        .tilemapTop = 18,
+        .tilemapTop = 17,
         .width = 28,
-        .height = 2,
+        .height = 3,
         .paletteNum = 15,
         .baseBlock = 55
     },
     { // name
         .bg = 0,
-        .tilemapLeft = 18,
-        .tilemapTop = 13,
-        .width = 11,
+        .tilemapLeft = 19,
+        .tilemapTop = 12,
+        .width = 10,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 111
+        .baseBlock = 139
     },
     DUMMY_WIN_TEMPLATE,
 };
@@ -308,7 +323,7 @@ static const struct WindowTemplate sWindowTemplates[] =
 static const struct CompressedSpriteSheet sCursorSpriteSheet =
 {
     .data = sCursor_Gfx,
-    .size = 0x200,
+    .size = 0x800,
     .tag = TAG_STARTER_CURSOR
 };
 
@@ -325,10 +340,10 @@ static const struct OamData sOam_Cursor =
     .objMode = ST_OAM_OBJ_NORMAL,
     .mosaic = FALSE,
     .bpp = ST_OAM_4BPP,
-    .shape = SPRITE_SHAPE(32x32),
+    .shape = SPRITE_SHAPE(64x64),
     .x = 0,
     .matrixNum = 0,
-    .size = SPRITE_SIZE(32x32),
+    .size = SPRITE_SIZE(64x64),
     .tileNum = 0,
     .priority = 0,
     .paletteNum = 0,
@@ -349,6 +364,55 @@ static const struct SpriteTemplate sSpriteTemplate_Cursor =
     .paletteTag = TAG_STARTER_CURSOR,
     .oam = &sOam_Cursor,
     .anims = sAnims_Cursor,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+static const struct CompressedSpriteSheet sPokeballSpriteSheet =
+{
+    .data = sPokeball_Gfx,
+    .size = 0x80,
+    .tag = TAG_STARTER_BALL
+};
+
+static const struct SpritePalette sPokeballSpritePalette =
+{
+    .data = sPokeball_Pal,
+    .tag = TAG_STARTER_BALL
+};
+
+static const struct OamData sOam_Pokeball =
+{
+    .y = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = FALSE,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(16x16),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(16x16),
+    .tileNum = 0,
+    .priority = 0,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const union AnimCmd sAnim_Pokeball[] =
+{
+    ANIMCMD_FRAME(0, 0),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnims_Pokeball[] = { sAnim_Pokeball };
+
+static const struct SpriteTemplate sSpriteTemplate_Pokeball =
+{
+    .tileTag = TAG_STARTER_BALL,
+    .paletteTag = TAG_STARTER_BALL,
+    .oam = &sOam_Pokeball,
+    .anims = sAnims_Pokeball,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCallbackDummy,
@@ -381,6 +445,7 @@ static void ExitStarterChoose(u8 taskId, u16 choice);
 static u16 GetChoiceIndex(u8 region, u8 cursor);
 static enum Species GetChoiceSpecies(u8 region, u8 cursor);
 static s32 StepCursor(u8 region, s32 cursor, s32 delta);
+static void SetCursorSpritePos(u8 spriteId, u8 cursor);
 
 void InitStarterChoices(void)
 {
@@ -470,6 +535,7 @@ void CB2_ChooseStarter(void)
     gTasks[taskId].tPicSprite = SPRITE_NONE;
     gTasks[taskId].tType0 = SPRITE_NONE;
     gTasks[taskId].tType1 = SPRITE_NONE;
+    gTasks[taskId].tBallSprite = SPRITE_NONE;
     CreateStarterChooseSprites(taskId);
     RefreshRegionIcons(taskId);
     RefreshSelection(taskId);
@@ -505,6 +571,8 @@ static void InitStarterChooseGfx(void)
     LoadMonIconPalettes();
     LoadCompressedSpriteSheet(&sCursorSpriteSheet);
     LoadSpritePalette(&sCursorSpritePalette);
+    LoadCompressedSpriteSheet(&sPokeballSpriteSheet);
+    LoadSpritePalette(&sPokeballSpritePalette);
     LoadCompressedSpriteSheet(&gSpriteSheet_MoveTypes);
     LoadPalette(gMoveTypes_Pal, OBJ_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
 }
@@ -517,10 +585,14 @@ static void CreateStarterChooseSprites(u8 taskId)
     for (i = 0; i < STARTER_SLOTS_PER_REGION; i++)
         sIconSprites[i] = SPRITE_NONE;
 
-    spriteId = CreateSprite(&sSpriteTemplate_Cursor, sGridCoords[0][0], sGridCoords[0][1], 0);
+    spriteId = CreateSprite(&sSpriteTemplate_Cursor, 0, 0, 0);
     gTasks[taskId].tCursorSprite = spriteId;
+    SetCursorSpritePos(spriteId, 0);
 
-    spriteId = CreateSprite(&gSpriteTemplate_MoveTypes, TYPE_ICON_X0, TYPE_ICON_Y, 1);
+    spriteId = CreateSprite(&sSpriteTemplate_Pokeball, POKEBALL_X, POKEBALL_Y, 0);
+    gTasks[taskId].tBallSprite = spriteId;
+
+    spriteId = CreateSprite(&gSpriteTemplate_MoveTypes, TYPE_ICON_X_SINGLE, TYPE_ICON_Y, 1);
     gSprites[spriteId].callback = SpriteCallbackDummy;
     gTasks[taskId].tType0 = spriteId;
 
@@ -568,6 +640,12 @@ static s32 StepCursor(u8 region, s32 cursor, s32 delta)
             return cursor;
     }
     return 0;
+}
+
+static void SetCursorSpritePos(u8 spriteId, u8 cursor)
+{
+    gSprites[spriteId].x = sGridCoords[cursor][0] + CURSOR_OFFSET_X;
+    gSprites[spriteId].y = sGridCoords[cursor][1] + CURSOR_OFFSET_Y;
 }
 
 static void RefreshRegionIcons(u8 taskId)
@@ -626,11 +704,12 @@ static void SetTypeBackground(enum Type type)
 static void PrintHeader(u8 region)
 {
     const u8 *label = sRegionLabels[region];
-    s32 width = GetStringWidth(FONT_NORMAL, label, 0);
+    s32 titleX = GetStringCenterAlignXOffset(FONT_NORMAL, sText_ChooseStarter, 120) - 15;
+    s32 regionX = 120 + GetStringCenterAlignXOffset(FONT_NARROW, label, 96);
 
     FillWindowPixelBuffer(WIN_HEADER, PIXEL_FILL(0));
-    AddTextPrinterParameterized3(WIN_HEADER, FONT_NORMAL, 0, 1, sHeaderTextColors, 0, sText_ChooseStarter);
-    AddTextPrinterParameterized3(WIN_HEADER, FONT_NARROW, 216 - width, 1, sHeaderTextColors, 0, label);
+    AddTextPrinterParameterized3(WIN_HEADER, FONT_NORMAL, titleX, 3, sHeaderTextColors, 0, sText_ChooseStarter);
+    AddTextPrinterParameterized3(WIN_HEADER, FONT_NARROW, regionX, 3, sHeaderTextColors, 0, label);
     PutWindowTilemap(WIN_HEADER);
     CopyWindowToVram(WIN_HEADER, COPYWIN_FULL);
 }
@@ -641,7 +720,7 @@ static void PrintFooter(bool32 confirm)
     s32 x = GetStringCenterAlignXOffset(FONT_NORMAL, text, 224);
 
     FillWindowPixelBuffer(WIN_FOOTER, PIXEL_FILL(0));
-    AddTextPrinterParameterized3(WIN_FOOTER, FONT_NORMAL, x, 1, sHeaderTextColors, 0, text);
+    AddTextPrinterParameterized3(WIN_FOOTER, FONT_NORMAL, x, 7, sHeaderTextColors, 0, text);
     PutWindowTilemap(WIN_FOOTER);
     CopyWindowToVram(WIN_FOOTER, COPYWIN_FULL);
 }
@@ -649,7 +728,7 @@ static void PrintFooter(bool32 confirm)
 static void PrintSpeciesName(enum Species species)
 {
     const u8 *name = GetSpeciesName(species);
-    s32 x = GetStringCenterAlignXOffset(FONT_NORMAL, name, 88);
+    s32 x = GetStringCenterAlignXOffset(FONT_NORMAL, name, 80) - 8;
 
     FillWindowPixelBuffer(WIN_NAME, PIXEL_FILL(0));
     AddTextPrinterParameterized3(WIN_NAME, FONT_NORMAL, x, 1, sNameTextColors, 0, name);
@@ -671,7 +750,7 @@ static void UpdateTypeIcons(u8 taskId, enum Species species)
     if (type2 == type1 || type2 == TYPE_NONE)
     {
         gSprites[sprite1].invisible = TRUE;
-        gSprites[sprite0].x = (TYPE_ICON_X0 + TYPE_ICON_X1) / 2;
+        gSprites[sprite0].x = TYPE_ICON_X_SINGLE;
     }
     else
     {
@@ -698,8 +777,7 @@ static void RefreshSelection(u8 taskId)
         species = GetChoiceSpecies(region, cursor);
     }
 
-    gSprites[cursorSprite].x = sGridCoords[cursor][0];
-    gSprites[cursorSprite].y = sGridCoords[cursor][1];
+    SetCursorSpritePos(cursorSprite, cursor);
 
     DestroyPicSprite(taskId);
 
@@ -747,6 +825,8 @@ static void ExitStarterChoose(u8 taskId, u16 choice)
         DestroySprite(&gSprites[gTasks[taskId].tType0]);
     if (gTasks[taskId].tType1 != SPRITE_NONE)
         DestroySprite(&gSprites[gTasks[taskId].tType1]);
+    if (gTasks[taskId].tBallSprite != SPRITE_NONE)
+        DestroySpriteAndFreeResources(&gSprites[gTasks[taskId].tBallSprite]);
     FreeMonIconPalettes();
     ResetAllPicSprites();
     FreeAllWindowBuffers();
